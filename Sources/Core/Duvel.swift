@@ -36,12 +36,10 @@ public class Duvel {
     ///
     /// Next to this it will create a main managed object context and one for use in the background.
     ///
+    /// - Parameter managedObjectModel: Pass the optional managed object model just in case it already exists.
     /// - Parameter storeURL: Pass the optional store url just in case it already exists.
     /// - Parameter storeType: Pass the optional store type. The default type is `NSSQLiteStoreType`.
-    public init(storeURL: NSURL = Duvel.defaultStoreURL, storeType: String = NSSQLiteStoreType) throws {
-        // Set default model found in the main bundle.
-        managedObjectModel = NSManagedObjectModel.mergedModelFromBundles(nil)
-        
+    public init(managedObjectModel: NSManagedObjectModel? = NSManagedObjectModel.mergedModelFromBundles(nil), storeURL: NSURL = Duvel.defaultStoreURL, storeType: String = NSSQLiteStoreType) throws {
         // Create the persisten store coordinator.
         persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel!)
         try persistentStoreCoordinator?.addPersistentStoreWithType(storeType, configuration: nil, URL: storeURL, options: nil)
