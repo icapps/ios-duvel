@@ -42,6 +42,14 @@ class FetchSpec: QuickSpec {
                     expect(beer).toNot(beNil())
                 }
                 
+                it("should find a first object with attribute") {
+                    let _: Beer = duvel.mainContext.create() { $0.name = "Duvel" }
+                    
+                    let beer: Beer? = duvel.mainContext.first(with: "name", and: "Duvel")
+                    expect(beer).toNot(beNil())
+                    expect(beer?.name).to(equal("Duvel"))
+                }
+                
                 it("should find a first object depending on the predicate") {
                     let _: Beer = duvel.mainContext.create() { $0.name = "Duvel" }
                     let _: Beer = duvel.mainContext.create() { $0.name = "Stella" }
