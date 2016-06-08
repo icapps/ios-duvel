@@ -103,6 +103,28 @@ class FetchSpec: QuickSpec {
                     expect(beers.last?.name).to(equal("Duvel"))
                 }
             }
+            
+            context("count") {
+                it("should not count any object") {
+                    expect(duvel.mainContext.count(Beer)).to(equal(0))
+                }
+                
+                it("should find two objects") {
+                    let _: Beer = duvel.mainContext.create() { $0.name = "Duvel" }
+                    let _: Beer = duvel.mainContext.create() { $0.name = "Stella" }
+                    
+                    expect(duvel.mainContext.count(Beer)).to(equal(2))
+                }
+                
+                it("should find two objects depending on the predicate") {
+                    let _: Beer = duvel.mainContext.create() { $0.name = "Duvel" }
+                    let _: Beer = duvel.mainContext.create() { $0.name = "Stella" }
+                    let _: Beer = duvel.mainContext.create() { $0.name = "Vedett" }
+                    
+                    let predicate = NSPredicate(format: "name CONTAINS %@", "l")
+                    expect(duvel.mainContext.count(Beer.self, withPredicate: predicate)).to(equal(2))
+                }
+            }
         }
         
     }

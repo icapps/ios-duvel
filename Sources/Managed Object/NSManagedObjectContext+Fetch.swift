@@ -49,6 +49,15 @@ public extension NSManagedObjectContext {
         return execute(fetchRequest: request) as! [T]
     }
     
+    public func count<T: NSManagedObject where T: ManagedObjectType>(
+        type: T.Type,
+        withPredicate predicate: NSPredicate? = nil
+    ) -> Int {
+        let request = T.fetchRequest(withPredicate: predicate)
+        request.includesSubentities = false
+        return countForFetchRequest(request, error: nil)
+    }
+    
     // MARK: - Fetch request
     
     private func execute(fetchRequest request: NSFetchRequest) -> [NSManagedObject] {
