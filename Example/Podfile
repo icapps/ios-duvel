@@ -1,12 +1,9 @@
 use_frameworks!
 
-target 'Duvel_Example' do
+target 'Duvel_Tests' do
   pod 'Duvel', :path => '../'
 
-  target 'Duvel_Tests' do
-    inherit! :search_paths
-
-    pod 'Quick', '~> 0.8'
+  # The test frameworks
+  pod 'Quick',  '~> 0.8'
   pod 'Nimble', '~> 3.0'
-  end
 end

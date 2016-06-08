@@ -1,0 +1,22 @@
+{
+  "name": "Duvel",
+  "version": "0.1.0",
+  "summary": "A short description of Duvel.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/Duvel",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Jelle Vandebeeck": "jelle@fousa.be"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/Duvel.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "Duvel/Classes/**/*"
+}

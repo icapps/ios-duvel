@@ -1,0 +1,6 @@
+framework module Duvel {
+  umbrella header "Duvel-umbrella.h"
+
+  export *
+  module * { export * }
+}
