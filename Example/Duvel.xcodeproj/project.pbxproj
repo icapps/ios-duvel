@@ -78,8 +78,7 @@
 		621A5AF41D08287400CA812B /* Specs */ = {
 			isa = PBXGroup;
 			children = (
-				621A5AF21D08287100CA812B /* ContextSpec.swift */,
-				621A5AF51D0828D600CA812B /* SetupSpec.swift */,
+				621A5B021D086BD500CA812B /* Core */,
 			);
 			path = Specs;
 			sourceTree = "<group>";
@@ -90,6 +89,15 @@
 				621A5AFC1D0866F500CA812B /* Model.xcdatamodeld */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		621A5B021D086BD500CA812B /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				621A5AF21D08287100CA812B /* ContextSpec.swift */,
+				621A5AF51D0828D600CA812B /* SetupSpec.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 		62E28D3CAB4091386D92E604 /* Pods */ = {
