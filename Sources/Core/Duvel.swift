@@ -8,6 +8,9 @@
 
 import CoreData
 
+/// `Duvel` is responsible for creating the persistent stores and creating the contexts we want to use.
+///
+/// You will be able to use `Duvel` as a singleton (with the `sharedInstance` property) or just as an instance you locate somewhere in your application.
 public class Duvel {
     
     // MARK: - Private
@@ -16,15 +19,25 @@ public class Duvel {
     
     // MARK: - Context
     
+    /// This is the `NSManagedObjectContext` you can use on the main thread. This context is a `MainQueueConcurrencyType`.
     public let mainContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+    
+    /// This is the `NSManagedObjectContext` you can use on the background thread. This context is a `PrivateQueueConcurrencyType`.
     public let backgroundContext = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
     
     // MARK: - Init
     
+    /// Use this singlethon property when you are sure you want to use only one `Duvel` instance throughout your entire application.
     public static var sharedInstance: Duvel? = {
         return try? Duvel()
     }()
     
+    /// Initalize `Duvel` and create a managed object model and a persistent store coordinate with a linked store.
+    ///
+    /// Next to this it will create a main managed object context and one for use in the background.
+    ///
+    /// - Parameter storeURL: Pass the optional store url just in case it already exists.
+    /// - Parameter storeType: Pass the optional store type. The default type is `NSSQLiteStoreType`.
     public init(storeURL: NSURL = Duvel.defaultStoreURL, storeType: String = NSSQLiteStoreType) throws {
         // Set default model found in the main bundle.
         managedObjectModel = NSManagedObjectModel.mergedModelFromBundles(nil)
@@ -43,6 +56,9 @@ public class Duvel {
     
     // MARK: - Destroy
     
+    /// You can destroy your persisten store and it's linked contexts.
+    ///
+    /// - Parameter storeURL: Pass the optional store url just in case it is custom defined.
     public func destroyStore(storeURL: NSURL = Duvel.defaultStoreURL) throws {
         // Stop the Core Data notifications.
         stopReceivingContextNotifications()
@@ -64,6 +80,7 @@ public class Duvel {
     
     // MARK: - Store
     
+    /// The `NSPersistentStoreCoordinator` that is set to `Duvel`.
     public private(set) var persistentStoreCoordinator: NSPersistentStoreCoordinator?
     
     private static var bundleIdentifier: String {
