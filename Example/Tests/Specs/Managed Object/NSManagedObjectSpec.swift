@@ -34,6 +34,38 @@ class NSManagedObjectSpec: QuickSpec {
                     expect(beer.name).to(equal("Duvel"))
                 }
             }
+            
+            context("fetching") {
+                it("should not find a first object") {
+                    let beer: Beer? = duvel.mainContext.first()
+                    expect(beer).to(beNil())
+                }
+                
+                it("should find a first object") {
+                    let _: Beer = duvel.mainContext.create() { $0.name = "Duvel" }
+                    
+                    let beer: Beer? = duvel.mainContext.first()
+                    expect(beer).toNot(beNil())
+                }
+                
+                it("should find a first object depending on the predicate") {
+                    let _: Beer = duvel.mainContext.create() { $0.name = "Duvel" }
+                    let _: Beer = duvel.mainContext.create() { $0.name = "Stella" }
+                    
+                    let predicate = NSPredicate(format: "name = %@", "Stella")
+                    let beer: Beer? = duvel.mainContext.first(withPredicate: predicate)
+                    expect(beer?.name).to(equal("Stella"))
+                }
+                
+                it("should find a first object depending on the sort descriptor") {
+                    let _: Beer = duvel.mainContext.create() { $0.name = "Duvel" }
+                    let _: Beer = duvel.mainContext.create() { $0.name = "Stella" }
+                    
+                    let descriptor = NSSortDescriptor(key: "name", ascending: false)
+                    let beer: Beer? = duvel.mainContext.first(withSortDescriptors: [descriptor])
+                    expect(beer?.name).to(equal("Stella"))
+                }
+            }
         }
         
     }

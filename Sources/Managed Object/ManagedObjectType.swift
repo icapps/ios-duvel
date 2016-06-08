@@ -20,4 +20,11 @@ extension ManagedObjectType {
         return String(self).componentsSeparatedByString(".").last!
     }
     
+    public static func fetchRequest(withPredicate predicate: NSPredicate? = nil, withSortDescriptors descriptors: [NSSortDescriptor]? = nil) -> NSFetchRequest {
+        let request = NSFetchRequest(entityName: entityName)
+        request.predicate = predicate
+        request.sortDescriptors = descriptors
+        return request
+    }
+    
 }
