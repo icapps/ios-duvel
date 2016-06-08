@@ -65,6 +65,39 @@ class NSManagedObjectSpec: QuickSpec {
                     let beer: Beer? = duvel.mainContext.first(withSortDescriptors: [descriptor])
                     expect(beer?.name).to(equal("Stella"))
                 }
+                
+                it("should not find any object") {
+                    let beers: [Beer] = duvel.mainContext.all()
+                    expect(beers.count).to(equal(0))
+                }
+                
+                it("should find two objects") {
+                    let _: Beer = duvel.mainContext.create() { $0.name = "Duvel" }
+                    let _: Beer = duvel.mainContext.create() { $0.name = "Stella" }
+                    
+                    let beers: [Beer] = duvel.mainContext.all()
+                    expect(beers.count).to(equal(2))
+                }
+                
+                it("should find two objects depending on the predicate") {
+                    let _: Beer = duvel.mainContext.create() { $0.name = "Duvel" }
+                    let _: Beer = duvel.mainContext.create() { $0.name = "Stella" }
+                    let _: Beer = duvel.mainContext.create() { $0.name = "Vedett" }
+                    
+                    let predicate = NSPredicate(format: "name CONTAINS %@", "l")
+                    let beers: [Beer] = duvel.mainContext.all(withPredicate: predicate)
+                    expect(beers.count).to(equal(2))
+                }
+                
+                it("should find two objects sorted with the sort descriptor") {
+                    let _: Beer = duvel.mainContext.create() { $0.name = "Duvel" }
+                    let _: Beer = duvel.mainContext.create() { $0.name = "Stella" }
+                    
+                    let descriptor = NSSortDescriptor(key: "name", ascending: false)
+                    let beers: [Beer] = duvel.mainContext.all(withSortDescriptors: [descriptor])
+                    expect(beers.first?.name).to(equal("Stella"))
+                    expect(beers.last?.name).to(equal("Duvel"))
+                }
             }
         }
         
