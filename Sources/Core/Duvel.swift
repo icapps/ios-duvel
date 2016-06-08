@@ -52,6 +52,10 @@ public class Duvel {
         startReceivingContextNotifications()
     }
     
+    deinit {
+        stopReceivingContextNotifications()
+    }
+    
     // MARK: - Destroy
     
     /// You can destroy your persisten store and it's linked contexts.
