@@ -1,5 +1,5 @@
 //
-//  ManagedObjectTypeSpec.swift
+//  EntitySpec.swift
 //  Duvel
 //
 //  Created by Jelle Vandebeeck on 08/06/16.
@@ -11,7 +11,7 @@ import Nimble
 import CoreData
 import Duvel
 
-class ManagedObjectTypeSpec: QuickSpec {
+class EntitySpec: QuickSpec {
     override func spec() {
         
         describe("managed object type") {
