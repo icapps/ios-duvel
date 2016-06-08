@@ -21,7 +21,15 @@ class FetchSpec: QuickSpec {
             var duvel: Duvel!
             beforeEach { duvel = try! Duvel(managedObjectModel: managedObjectModel, storeType: NSInMemoryStoreType) }
             
-            context("fetch") {
+            context("fetch request") {
+                it("should create a fetch request") {
+                    let request = Beer.fetchRequest()
+                    expect(request).toNot(beNil())
+                    expect(request.entityName).to(equal("Beer"))
+                }
+            }
+            
+            context("first") {
                 it("should not find a first object") {
                     let beer: Beer? = duvel.mainContext.first()
                     expect(beer).to(beNil())
@@ -51,7 +59,9 @@ class FetchSpec: QuickSpec {
                     let beer: Beer? = duvel.mainContext.first(withSortDescriptors: [descriptor])
                     expect(beer?.name).to(equal("Stella"))
                 }
-                
+            }
+            
+            context("all") {
                 it("should not find any object") {
                     let beers: [Beer] = duvel.mainContext.all()
                     expect(beers.count).to(equal(0))
