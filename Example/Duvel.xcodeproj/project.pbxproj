@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		621A5AF31D08287100CA812B /* ContextSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621A5AF21D08287100CA812B /* ContextSpec.swift */; };
+		621A5AF61D0828D600CA812B /* SetupSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621A5AF51D0828D600CA812B /* SetupSpec.swift */; };
+		621A5AFE1D0866F500CA812B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 621A5AFC1D0866F500CA812B /* Model.xcdatamodeld */; };
 		8729F7C4F4C1581182301CDB /* Pods_Duvel_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF136FA011B039338D7CBA17 /* Pods_Duvel_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -17,7 +19,9 @@
 		5EDC5DE495B02D59C6F53281 /* Pods-Duvel_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Duvel_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Duvel_Example/Pods-Duvel_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* Duvel_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Duvel_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		621A5AF21D08287100CA812B /* ContextSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextSpec.swift; sourceTree = "<group>"; };
+		621A5AF51D0828D600CA812B /* SetupSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupSpec.swift; sourceTree = "<group>"; };
+		621A5AFD1D0866F500CA812B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		7531ADF6AA6B20340296AC06 /* Pods-Duvel_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Duvel_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Duvel_Tests/Pods-Duvel_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		9A0D4B218D8561CD101E525A /* Pods-Duvel_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Duvel_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Duvel_Tests/Pods-Duvel_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		AF136FA011B039338D7CBA17 /* Pods_Duvel_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Duvel_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,10 +42,10 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
-				607FACE81AFB9204008FA782 /* Tests */,
-				607FACD11AFB9204008FA782 /* Products */,
-				62E28D3CAB4091386D92E604 /* Pods */,
 				C6B52A7FE1C5F29B2A113F54 /* Frameworks */,
+				62E28D3CAB4091386D92E604 /* Pods */,
+				607FACD11AFB9204008FA782 /* Products */,
+				607FACE81AFB9204008FA782 /* Tests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,7 +60,8 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				621A5AFF1D0866F800CA812B /* Resources */,
+				621A5AF41D08287400CA812B /* Specs */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -67,7 +72,24 @@
 			children = (
 				607FACEA1AFB9204008FA782 /* Info.plist */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		621A5AF41D08287400CA812B /* Specs */ = {
+			isa = PBXGroup;
+			children = (
+				621A5AF21D08287100CA812B /* ContextSpec.swift */,
+				621A5AF51D0828D600CA812B /* SetupSpec.swift */,
+			);
+			path = Specs;
+			sourceTree = "<group>";
+		};
+		621A5AFF1D0866F800CA812B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				621A5AFC1D0866F500CA812B /* Model.xcdatamodeld */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		62E28D3CAB4091386D92E604 /* Pods */ = {
@@ -209,7 +231,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				621A5AF31D08287100CA812B /* ContextSpec.swift in Sources */,
+				621A5AF61D0828D600CA812B /* SetupSpec.swift in Sources */,
+				621A5AFE1D0866F500CA812B /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,7 +331,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = Tests/Info.plist;
+				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
@@ -320,7 +344,7 @@
 			baseConfigurationReference = 7531ADF6AA6B20340296AC06 /* Pods-Duvel_Tests.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = Tests/Info.plist;
+				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
@@ -350,6 +374,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		621A5AFC1D0866F500CA812B /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				621A5AFD1D0866F500CA812B /* Model.xcdatamodel */,
+			);
+			currentVersion = 621A5AFD1D0866F500CA812B /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 607FACC81AFB9204008FA782 /* Project object */;
 }

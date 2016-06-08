@@ -40,6 +40,7 @@
 		4E7444BA2096AC0477943C2EE3DB0893 /* QCKDSL.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E738963C2EB4542069F1E6586836C9 /* QCKDSL.m */; };
 		5104AE2989305145BF446E633B567924 /* EndWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE5DB72110FF4FE8D16C90A617EFD92 /* EndWith.swift */; };
 		5EF5C00C6AECE1FCFFF118577817F5CE /* Equal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D3661DD977D936FA0FEA7FDE08D852 /* Equal.swift */; };
+		621A5AF81D082A8400CA812B /* Duvel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621A5AF71D082A8400CA812B /* Duvel.swift */; };
 		63BBD83995BA60FA7D2E6AD4138C0D71 /* Functional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354B5315AD30C24D1172D4F1524B068D /* Functional.swift */; };
 		64539BE196D1741570018FFF86F14133 /* MatcherFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971FBD63640E42D5B13E199D80A38E44 /* MatcherFunc.swift */; };
 		656B6582F729F38451557E925A10392E /* World+DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299FCFFDCC88E9151397B8D50F79E36E /* World+DSL.swift */; };
@@ -70,6 +71,7 @@
 		9F08F74CB8740CF0EFF26746EEB0C930 /* CurrentTestCaseTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9759ABA2939945FD31FB478AE32D9E15 /* CurrentTestCaseTracker.m */; };
 		A2CABD326609AD67377700A148785E09 /* BeAnInstanceOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34071C41916A37E669FEEBA855F42C2 /* BeAnInstanceOf.swift */; };
 		A374A2729E32469085C5025EC7115EB8 /* Stringers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF762208E123E2F61AEE13E62DCA565 /* Stringers.swift */; };
+		A47F0046C54737B1AD8E52D9C802B04C /* Duvel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1346B73C3CF5960021FFDCBFD0FAB5 /* Duvel-dummy.m */; };
 		A55EC200F57C00E9A78D8A9DA4545338 /* HaveCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF1A6A09F31564DDB5769E5567558BD /* HaveCount.swift */; };
 		B06DDA027E4E0F22C5CA388EBCF58748 /* NSString+QCKSelectorName.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A83F0092F039C6F7AFC5D9D1E55E3BE /* NSString+QCKSelectorName.m */; };
 		B43EDBC7DA15A429006C67B63D45ACFD /* ThrowError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E904D9C3B8ED32F61307B82AF1DE02 /* ThrowError.swift */; };
@@ -79,7 +81,6 @@
 		B9D2E426B5CA226D60A78A71FA289D4C /* AsyncMatcherWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9341EE27FCA41AD8B88193EC0C839859 /* AsyncMatcherWrapper.swift */; };
 		BD6F658A2ED289B163D475F6AFB0A3A9 /* ExampleGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBACEB31F87FDB2A294186DEFA980590 /* ExampleGroup.swift */; };
 		C12E0930E021F1894B60BC6AFA8F2409 /* AdapterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62ADCB0AE00199FEACED77BDE119552F /* AdapterProtocols.swift */; };
-		C46D1592C76704142ADF26E633668201 /* Duvel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1346B73C3CF5960021FFDCBFD0FAB5 /* Duvel-dummy.m */; };
 		C66A24E0A5EBB234C9F4ECA770CBD957 /* Pods-Duvel_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CFEAAFED4522923A962B2374BD2DFF9 /* Pods-Duvel_Tests-dummy.m */; };
 		C77442DA327383276F4F2C23D7377B4F /* QuickSpec.h in Headers */ = {isa = PBXBuildFile; fileRef = 3973F89F7C13EAD4855CFC68BCC8511E /* QuickSpec.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C81FFEEC76399EF3C7C1EE349C810E76 /* NimbleXCTestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DE7320F652DCF39EB6A1476F0C761B /* NimbleXCTestHandler.swift */; };
@@ -98,7 +99,6 @@
 		F85A9207A8601CE7F835CEC56790616F /* Expectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51465DCF8ECE9AE4DD3DECD5656849CE /* Expectation.swift */; };
 		F8F510A1B69261FC9895B5D872D49F76 /* Duvel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D2076C640666CC212E594BC29C6BB83 /* Duvel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FB09A16A6662F2689D4AA89538DBF1C1 /* BeAKindOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5B6394838D23DE3BD6C1113A355553 /* BeAKindOf.swift */; };
-		FF4E6859C8F2923F0958D687703B0070 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D5B487031D8431D6428B8429F27333 /* ReplaceMe.swift */; };
 		FFF21A80F460256EFC3266294811A8B8 /* QuickConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = E2353FC0C41320250E7132DE6734F885 /* QuickConfiguration.m */; };
 /* End PBXBuildFile section */
 
@@ -138,7 +138,6 @@
 		0F2748FABD1661E3A75F8B07E115CF96 /* BeNil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeNil.swift; path = Sources/Nimble/Matchers/BeNil.swift; sourceTree = "<group>"; };
 		12FD8C45CF9591F32C21657E578112C9 /* Quick-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Quick-prefix.pch"; sourceTree = "<group>"; };
 		14E1DC94DD47A6F91084F3EAA92AF552 /* Quick.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Quick.modulemap; sourceTree = "<group>"; };
-		16D5B487031D8431D6428B8429F27333 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaceMe.swift; sourceTree = "<group>"; };
 		18D110A87EF135293B27C04BD720A8E8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C369DE47B8FBDDF56994EF084D14F12 /* HooksPhase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HooksPhase.swift; path = Sources/Quick/Hooks/HooksPhase.swift; sourceTree = "<group>"; };
 		1D2076C640666CC212E594BC29C6BB83 /* Duvel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Duvel-umbrella.h"; sourceTree = "<group>"; };
@@ -168,6 +167,7 @@
 		5CFEAAFED4522923A962B2374BD2DFF9 /* Pods-Duvel_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Duvel_Tests-dummy.m"; sourceTree = "<group>"; };
 		5D01DC7E30B09742A7FF15155852F1E3 /* Pods-Duvel_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Duvel_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6038FD31E661BC80700D2B885EBBD876 /* Pods-Duvel_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Duvel_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		621A5AF71D082A8400CA812B /* Duvel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Duvel.swift; sourceTree = "<group>"; };
 		627E4E84747227302312F1E22D114789 /* DSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DSL.swift; path = Sources/Nimble/DSL.swift; sourceTree = "<group>"; };
 		62ADCB0AE00199FEACED77BDE119552F /* AdapterProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AdapterProtocols.swift; path = Sources/Nimble/Adapters/AdapterProtocols.swift; sourceTree = "<group>"; };
 		62C9EA115D167F4132613835B0AA5585 /* BeLessThan.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeLessThan.swift; path = Sources/Nimble/Matchers/BeLessThan.swift; sourceTree = "<group>"; };
@@ -281,6 +281,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		167E3E9AC349599ACEC6ABEC8CE56241 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				621A5AF71D082A8400CA812B /* Duvel.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		283DBD5C5897CC51DC3073C70F1D60C8 /* Pods-Duvel_Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -356,14 +364,6 @@
 			path = Nimble;
 			sourceTree = "<group>";
 		};
-		4024C8B457A6CEB475DABF7BE6044CDA /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				16D5B487031D8431D6428B8429F27333 /* ReplaceMe.swift */,
-			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
 		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -429,7 +429,7 @@
 		BADBF3E184ED3280920BE2C8C31B7B3F /* Duvel */ = {
 			isa = PBXGroup;
 			children = (
-				4024C8B457A6CEB475DABF7BE6044CDA /* Sources */,
+				167E3E9AC349599ACEC6ABEC8CE56241 /* Sources */,
 				D78E4E441D059520149B80AA5358214E /* Support Files */,
 			);
 			name = Duvel;
@@ -591,7 +591,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F2D4B5092638240754EEEFF76FD75232 /* Build configuration list for PBXNativeTarget "Duvel" */;
 			buildPhases = (
-				B916AEA40B0F2A5B1E4DB8693996DFE5 /* Sources */,
+				FE921C5512E459554CA69FEABD9EA10E /* Sources */,
 				F7666152E3FAA3C88F0425D74F8C5BCB /* Frameworks */,
 				B7E64DE40BAA1C8B5F29B621C6B0B951 /* Headers */,
 			);
@@ -761,12 +761,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B916AEA40B0F2A5B1E4DB8693996DFE5 /* Sources */ = {
+		FE921C5512E459554CA69FEABD9EA10E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C46D1592C76704142ADF26E633668201 /* Duvel-dummy.m in Sources */,
-				FF4E6859C8F2923F0958D687703B0070 /* ReplaceMe.swift in Sources */,
+				621A5AF81D082A8400CA812B /* Duvel.swift in Sources */,
+				A47F0046C54737B1AD8E52D9C802B04C /* Duvel-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -899,6 +899,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AFFA5843DAA2EECADE5D496F6E12C299 /* Duvel.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1062,6 +1063,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AFFA5843DAA2EECADE5D496F6E12C299 /* Duvel.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
