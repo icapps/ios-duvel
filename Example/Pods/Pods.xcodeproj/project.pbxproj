@@ -16,6 +16,7 @@
 		135B6326D35C977854AA0C12B3F6CB7D /* DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E4E84747227302312F1E22D114789 /* DSL.swift */; };
 		13CC849FA70CADF802470B6A90DCDF79 /* AllPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AD566EC508F35AEBD09410C38B0113 /* AllPass.swift */; };
 		189938F0860BD01944E8B9FACBDD1181 /* String+FileName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CBE690E9186E686698A8A8A71C5355 /* String+FileName.swift */; };
+		1D4D0A08DEF0501588FC69F31B9F77D3 /* Duvel+Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2794EB5B977DE3D32480FD6008A38A77 /* Duvel+Context.swift */; };
 		1ED8C77E9422C66BBF56E6C10D5826F0 /* NMBExceptionCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = D365431FBA3C40A9570E9266B44005D7 /* NMBExceptionCapture.m */; };
 		206075FD011EC8966467096FCD30F3B5 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17FBDF6FF6B666A3D102EDD81DFE416 /* Filter.swift */; };
 		23626BC4DDA1A2E90A155728F57802FF /* DSL.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DC1174FD42CD6684C5DE79AC08B57C5 /* DSL.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -23,6 +24,7 @@
 		26D827BAD8656CD96A088581EA21C2FF /* Callsite.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC07B6CC006238186A56EEC6E8D3CD88 /* Callsite.swift */; };
 		2A2D44E880911FFC3A57DB2660AFDD5B /* NSBundle+CurrentTestBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B16739831A57E59BFE39E8BF50128C /* NSBundle+CurrentTestBundle.swift */; };
 		2E02A6A4148A873AA8516256BD344B1D /* DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414114D9FD8600FA208D6152470C2DF0 /* DSL.swift */; };
+		2F644E9EC40830797966FFC920F590D2 /* Duvel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B248EE3DF188B6795476D06415EA24 /* Duvel.swift */; };
 		30AACAA8D51DC8C429577D9B67BB016C /* BeginWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203A5C5D36EAB5C74A7CA2C7F3E57854 /* BeginWith.swift */; };
 		31629295E87A24C98238C66D41983C49 /* BeVoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB2D871B9C6D5C6EE2172BB9AFD2627 /* BeVoid.swift */; };
 		3279FFDF9554C5844FFD8890E567C7D5 /* QCKDSL.h in Headers */ = {isa = PBXBuildFile; fileRef = 7005B0ADF96C275382B45359AE1A0FDC /* QCKDSL.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -47,6 +49,7 @@
 		6ED0409031540D9B2AD7B061B608B0C9 /* DSL+Wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75752235C59671F25A86BF987E354AFE /* DSL+Wait.swift */; };
 		7202A0B871C57B7857341D88C2883A3A /* BeIdenticalTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020CA039BDF669709230645FC23F7C77 /* BeIdenticalTo.swift */; };
 		72104C38F3A543D8304CBDAD89516573 /* SuiteHooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = D772AF03D0B82E63647D129AEA9CCF1B /* SuiteHooks.swift */; };
+		73B012A5EAE9D08299C1984556DBE933 /* Duvel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D2076C640666CC212E594BC29C6BB83 /* Duvel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		759F18BA651FB896CD25479321CF3BBB /* Pods-Duvel_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FD65944A02A5C15F30C07CBEEC30690 /* Pods-Duvel_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7734BABBECE0071CF5D4430515B938BF /* BeCloseTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE93FA4667205AEE386C8648ABDC57E /* BeCloseTo.swift */; };
 		775646739B95E828ECE349F6A39534F4 /* NimbleEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E85327D01378E8AB714335E9E7CE7F /* NimbleEnvironment.swift */; };
@@ -71,6 +74,7 @@
 		A2CABD326609AD67377700A148785E09 /* BeAnInstanceOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34071C41916A37E669FEEBA855F42C2 /* BeAnInstanceOf.swift */; };
 		A374A2729E32469085C5025EC7115EB8 /* Stringers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF762208E123E2F61AEE13E62DCA565 /* Stringers.swift */; };
 		A55EC200F57C00E9A78D8A9DA4545338 /* HaveCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF1A6A09F31564DDB5769E5567558BD /* HaveCount.swift */; };
+		A9B713AEDE2753EF1A94064954AB0AF0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC405455F8E20BD0434D9D3E3D2879A /* Foundation.framework */; };
 		B06DDA027E4E0F22C5CA388EBCF58748 /* NSString+QCKSelectorName.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A83F0092F039C6F7AFC5D9D1E55E3BE /* NSString+QCKSelectorName.m */; };
 		B43EDBC7DA15A429006C67B63D45ACFD /* ThrowError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E904D9C3B8ED32F61307B82AF1DE02 /* ThrowError.swift */; };
 		B5EA201D4607AFAA947F8C085948A25A /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875A7681674D572B7002D69BBCD1BA09 /* Example.swift */; };
@@ -79,15 +83,14 @@
 		B9D2E426B5CA226D60A78A71FA289D4C /* AsyncMatcherWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9341EE27FCA41AD8B88193EC0C839859 /* AsyncMatcherWrapper.swift */; };
 		BD6F658A2ED289B163D475F6AFB0A3A9 /* ExampleGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBACEB31F87FDB2A294186DEFA980590 /* ExampleGroup.swift */; };
 		C12E0930E021F1894B60BC6AFA8F2409 /* AdapterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62ADCB0AE00199FEACED77BDE119552F /* AdapterProtocols.swift */; };
-		C46D1592C76704142ADF26E633668201 /* Duvel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A8D60CE220C04D653BDDA1B45B21D5 /* Duvel-dummy.m */; };
 		C66A24E0A5EBB234C9F4ECA770CBD957 /* Pods-Duvel_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CFEAAFED4522923A962B2374BD2DFF9 /* Pods-Duvel_Tests-dummy.m */; };
 		C77442DA327383276F4F2C23D7377B4F /* QuickSpec.h in Headers */ = {isa = PBXBuildFile; fileRef = 3973F89F7C13EAD4855CFC68BCC8511E /* QuickSpec.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C81FFEEC76399EF3C7C1EE349C810E76 /* NimbleXCTestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DE7320F652DCF39EB6A1476F0C761B /* NimbleXCTestHandler.swift */; };
-		C93B35265621F7B82EEB8817F310C954 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC405455F8E20BD0434D9D3E3D2879A /* Foundation.framework */; };
 		CCBEB7A69A504A0353A133328D2A90CC /* QuickSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A1177F46842A02EE1A9A945434E453FF /* QuickSpec.m */; };
 		CD0A671D2A8DD31D50449BB358C56134 /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41006CFFEC28B4197817C14B5D087239 /* Expression.swift */; };
 		CE8B999AD9B623FF55AE4A94FC7D9DA0 /* ExampleMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D34ECCB9113A10197320CD540DDA73 /* ExampleMetadata.swift */; };
 		D41F628A81153A978EB209E4FE925700 /* Nimble.h in Headers */ = {isa = PBXBuildFile; fileRef = BE582507271FE02BA93C412C422D4ED8 /* Nimble.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D50733DC784E6F9C56ED860E4A838FA7 /* Duvel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1346B73C3CF5960021FFDCBFD0FAB5 /* Duvel-dummy.m */; };
 		DCA54337E8687685A293CC24A97F936C /* Contain.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AB889028901EAF2823A40F21B4F5B /* Contain.swift */; };
 		DF0216DBDE0084F6C87FE9275A4E9F0D /* Nimble-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CFF847D8C75EDD1CE2BA21A60D08E00 /* Nimble-dummy.m */; };
 		E6F6FF9554A6C7EABD6B92B691751DAD /* BeLessThanOrEqual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9CA5402AFA68BE2A5F70E09014318D /* BeLessThanOrEqual.swift */; };
@@ -96,9 +99,7 @@
 		EDA6CDC80ABE2206B3B1EA577E71A462 /* ErrorUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B7C1953D52C630B7CEA85DC7D30371 /* ErrorUtility.swift */; };
 		F58734C7400C6C29070ECE99AB7315E7 /* Quick-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED85DFD58F13E73CC6080D18D5C1E10 /* Quick-dummy.m */; };
 		F85A9207A8601CE7F835CEC56790616F /* Expectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51465DCF8ECE9AE4DD3DECD5656849CE /* Expectation.swift */; };
-		F8F510A1B69261FC9895B5D872D49F76 /* Duvel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D385D83E012A6868EC5AA280553742E1 /* Duvel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FB09A16A6662F2689D4AA89538DBF1C1 /* BeAKindOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5B6394838D23DE3BD6C1113A355553 /* BeAKindOf.swift */; };
-		FF4E6859C8F2923F0958D687703B0070 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338DC8FFEEB14F5F1A4A4F25ABD23376 /* ReplaceMe.swift */; };
 		FFF21A80F460256EFC3266294811A8B8 /* QuickConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = E2353FC0C41320250E7132DE6734F885 /* QuickConfiguration.m */; };
 /* End PBXBuildFile section */
 
@@ -121,34 +122,38 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 93BC99FA92C223836B5E7ABE474A9C8D;
+			remoteGlobalIDString = C2CD7D828004BB519D84E7AD0A3AAC8F;
 			remoteInfo = Duvel;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00F971BFD8A911A26188146D4B523E12 /* Duvel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Duvel.modulemap; sourceTree = "<group>"; };
 		0123C787205C78A0B206D77802A3C638 /* Pods-Duvel_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Duvel_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		01E904D9C3B8ED32F61307B82AF1DE02 /* ThrowError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThrowError.swift; path = Sources/Nimble/Matchers/ThrowError.swift; sourceTree = "<group>"; };
 		020CA039BDF669709230645FC23F7C77 /* BeIdenticalTo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeIdenticalTo.swift; path = Sources/Nimble/Matchers/BeIdenticalTo.swift; sourceTree = "<group>"; };
 		03925EC2DD9F80DCD0C2E5301B52DC9C /* QuickSelectedTestSuiteBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QuickSelectedTestSuiteBuilder.swift; path = Sources/Quick/QuickSelectedTestSuiteBuilder.swift; sourceTree = "<group>"; };
 		03AD566EC508F35AEBD09410C38B0113 /* AllPass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AllPass.swift; path = Sources/Nimble/Matchers/AllPass.swift; sourceTree = "<group>"; };
 		044759FD23162A773B4B83B57BD82159 /* Duvel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Duvel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		04B248EE3DF188B6795476D06415EA24 /* Duvel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Duvel.swift; sourceTree = "<group>"; };
 		0CFF847D8C75EDD1CE2BA21A60D08E00 /* Nimble-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Nimble-dummy.m"; sourceTree = "<group>"; };
 		0F2748FABD1661E3A75F8B07E115CF96 /* BeNil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeNil.swift; path = Sources/Nimble/Matchers/BeNil.swift; sourceTree = "<group>"; };
 		12FD8C45CF9591F32C21657E578112C9 /* Quick-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Quick-prefix.pch"; sourceTree = "<group>"; };
 		14E1DC94DD47A6F91084F3EAA92AF552 /* Quick.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Quick.modulemap; sourceTree = "<group>"; };
 		18D110A87EF135293B27C04BD720A8E8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C369DE47B8FBDDF56994EF084D14F12 /* HooksPhase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HooksPhase.swift; path = Sources/Quick/Hooks/HooksPhase.swift; sourceTree = "<group>"; };
+		1D2076C640666CC212E594BC29C6BB83 /* Duvel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Duvel-umbrella.h"; sourceTree = "<group>"; };
 		203A5C5D36EAB5C74A7CA2C7F3E57854 /* BeginWith.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeginWith.swift; path = Sources/Nimble/Matchers/BeginWith.swift; sourceTree = "<group>"; };
 		22BF65FFEC8A084057E63EDF139D2BD1 /* PostNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PostNotification.swift; path = Sources/Nimble/Matchers/PostNotification.swift; sourceTree = "<group>"; };
 		23D3F787478B2953573939A0E8511140 /* Nimble-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Nimble-prefix.pch"; sourceTree = "<group>"; };
+		2794EB5B977DE3D32480FD6008A38A77 /* Duvel+Context.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Duvel+Context.swift"; sourceTree = "<group>"; };
 		299FCFFDCC88E9151397B8D50F79E36E /* World+DSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "World+DSL.swift"; path = "Sources/Quick/DSL/World+DSL.swift"; sourceTree = "<group>"; };
 		2A414C35360A25163AA8D7D17AB68C77 /* RaisesException.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RaisesException.swift; path = Sources/Nimble/Matchers/RaisesException.swift; sourceTree = "<group>"; };
 		2AEDCA8E96FF6E3C7A604705D4D34B06 /* World.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = World.swift; path = Sources/Quick/World.swift; sourceTree = "<group>"; };
+		2C1346B73C3CF5960021FFDCBFD0FAB5 /* Duvel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Duvel-dummy.m"; sourceTree = "<group>"; };
 		2D4DEBAA391B6F9E5C9294F4DE25CA96 /* QuickConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QuickConfiguration.h; path = Sources/Quick/Configuration/QuickConfiguration.h; sourceTree = "<group>"; };
 		3011D38F413A8C411AA1A240310C93E4 /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30B16739831A57E59BFE39E8BF50128C /* NSBundle+CurrentTestBundle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSBundle+CurrentTestBundle.swift"; path = "Sources/Quick/NSBundle+CurrentTestBundle.swift"; sourceTree = "<group>"; };
-		338DC8FFEEB14F5F1A4A4F25ABD23376 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaceMe.swift; sourceTree = "<group>"; };
 		354B5315AD30C24D1172D4F1524B068D /* Functional.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Functional.swift; path = Sources/Nimble/Utils/Functional.swift; sourceTree = "<group>"; };
 		3967E353C11023B5BFA469EDF600CA68 /* Nimble.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Nimble.modulemap; sourceTree = "<group>"; };
 		3973F89F7C13EAD4855CFC68BCC8511E /* QuickSpec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QuickSpec.h; path = Sources/Quick/QuickSpec.h; sourceTree = "<group>"; };
@@ -160,8 +165,6 @@
 		45D3661DD977D936FA0FEA7FDE08D852 /* Equal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Equal.swift; path = Sources/Nimble/Matchers/Equal.swift; sourceTree = "<group>"; };
 		4EBC862576E582DF711B25DC28CFCDBE /* QuickTestSuite.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QuickTestSuite.swift; path = Sources/Quick/QuickTestSuite.swift; sourceTree = "<group>"; };
 		51465DCF8ECE9AE4DD3DECD5656849CE /* Expectation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Expectation.swift; path = Sources/Nimble/Expectation.swift; sourceTree = "<group>"; };
-		5A4591D2ED6989B219C93808BE23FBCF /* Duvel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Duvel.xcconfig; sourceTree = "<group>"; };
-		5C7E28B908F99A251B903B64046563B3 /* Duvel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Duvel-prefix.pch"; sourceTree = "<group>"; };
 		5C8C873CB5F43A0FA130C9B9FF74B6B0 /* SatisfyAnyOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SatisfyAnyOf.swift; path = Sources/Nimble/Matchers/SatisfyAnyOf.swift; sourceTree = "<group>"; };
 		5CE93FA4667205AEE386C8648ABDC57E /* BeCloseTo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeCloseTo.swift; path = Sources/Nimble/Matchers/BeCloseTo.swift; sourceTree = "<group>"; };
 		5CFEAAFED4522923A962B2374BD2DFF9 /* Pods-Duvel_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Duvel_Tests-dummy.m"; sourceTree = "<group>"; };
@@ -170,6 +173,7 @@
 		627E4E84747227302312F1E22D114789 /* DSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DSL.swift; path = Sources/Nimble/DSL.swift; sourceTree = "<group>"; };
 		62ADCB0AE00199FEACED77BDE119552F /* AdapterProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AdapterProtocols.swift; path = Sources/Nimble/Adapters/AdapterProtocols.swift; sourceTree = "<group>"; };
 		62C9EA115D167F4132613835B0AA5585 /* BeLessThan.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeLessThan.swift; path = Sources/Nimble/Matchers/BeLessThan.swift; sourceTree = "<group>"; };
+		63D2BBF087339D8DE99EB4479852BD38 /* Duvel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Duvel-prefix.pch"; sourceTree = "<group>"; };
 		63F128D04702DDF46711BC71C2E57EB2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66A3FFEFA87108503C1154659236D755 /* ExampleHooks.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExampleHooks.swift; path = Sources/Quick/Hooks/ExampleHooks.swift; sourceTree = "<group>"; };
 		66CBE690E9186E686698A8A8A71C5355 /* String+FileName.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+FileName.swift"; path = "Sources/Quick/String+FileName.swift"; sourceTree = "<group>"; };
@@ -196,8 +200,6 @@
 		91EB10846A1D5A8B9A3BA28C5457DF56 /* NSString+QCKSelectorName.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+QCKSelectorName.h"; path = "Sources/Quick/NSString+QCKSelectorName.h"; sourceTree = "<group>"; };
 		9341EE27FCA41AD8B88193EC0C839859 /* AsyncMatcherWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncMatcherWrapper.swift; path = Sources/Nimble/Wrappers/AsyncMatcherWrapper.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		93A8D60CE220C04D653BDDA1B45B21D5 /* Duvel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Duvel-dummy.m"; sourceTree = "<group>"; };
-		95277ACB63B2F01789193B0CB52F14DD /* Duvel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Duvel.modulemap; sourceTree = "<group>"; };
 		971FBD63640E42D5B13E199D80A38E44 /* MatcherFunc.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MatcherFunc.swift; path = Sources/Nimble/Wrappers/MatcherFunc.swift; sourceTree = "<group>"; };
 		9759ABA2939945FD31FB478AE32D9E15 /* CurrentTestCaseTracker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CurrentTestCaseTracker.m; path = Sources/Nimble/objc/CurrentTestCaseTracker.m; sourceTree = "<group>"; };
 		97FCDF85EBE10CCA81BA7375FB46A1CC /* Pods_Duvel_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Duvel_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -213,6 +215,7 @@
 		AAC325F77555916EE55065F37EA4C575 /* BeGreaterThanOrEqualTo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeGreaterThanOrEqualTo.swift; path = Sources/Nimble/Matchers/BeGreaterThanOrEqualTo.swift; sourceTree = "<group>"; };
 		AAC405455F8E20BD0434D9D3E3D2879A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		AE8CFDED63B2CD5BC846E14E3354AC73 /* Closures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Closures.swift; path = Sources/Quick/Hooks/Closures.swift; sourceTree = "<group>"; };
+		AFFA5843DAA2EECADE5D496F6E12C299 /* Duvel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Duvel.xcconfig; sourceTree = "<group>"; };
 		B65AB889028901EAF2823A40F21B4F5B /* Contain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Contain.swift; path = Sources/Nimble/Matchers/Contain.swift; sourceTree = "<group>"; };
 		B6988794BE3149D9E7253F7D057A0A92 /* BeGreaterThan.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeGreaterThan.swift; path = Sources/Nimble/Matchers/BeGreaterThan.swift; sourceTree = "<group>"; };
 		B89BF7315BAB3516AF2A51041DC39C3B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -223,11 +226,10 @@
 		BEDAA753452F6B96DE24D2CF7D396628 /* AssertionRecorder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssertionRecorder.swift; path = Sources/Nimble/Adapters/AssertionRecorder.swift; sourceTree = "<group>"; };
 		C34071C41916A37E669FEEBA855F42C2 /* BeAnInstanceOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeAnInstanceOf.swift; path = Sources/Nimble/Matchers/BeAnInstanceOf.swift; sourceTree = "<group>"; };
 		C5DDC9824ED21BCC218F3C3E3E907AED /* XCTestSuite+QuickTestSuiteBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "XCTestSuite+QuickTestSuiteBuilder.m"; path = "Sources/Quick/XCTestSuite+QuickTestSuiteBuilder.m"; sourceTree = "<group>"; };
+		C8963FDA5FCD988F8AFCC62B205C8ECB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB75D143FA2C1D4F42F8F03369239006 /* ObjCMatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ObjCMatcher.swift; path = Sources/Nimble/Wrappers/ObjCMatcher.swift; sourceTree = "<group>"; };
-		CDBD146014A3760E3866AA9F3AF8EDBE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D29528E2ADACEB31F5B2380DA50612C1 /* BeLogical.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeLogical.swift; path = Sources/Nimble/Matchers/BeLogical.swift; sourceTree = "<group>"; };
 		D365431FBA3C40A9570E9266B44005D7 /* NMBExceptionCapture.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NMBExceptionCapture.m; path = Sources/Nimble/objc/NMBExceptionCapture.m; sourceTree = "<group>"; };
-		D385D83E012A6868EC5AA280553742E1 /* Duvel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Duvel-umbrella.h"; sourceTree = "<group>"; };
 		D772AF03D0B82E63647D129AEA9CCF1B /* SuiteHooks.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SuiteHooks.swift; path = Sources/Quick/Hooks/SuiteHooks.swift; sourceTree = "<group>"; };
 		D90C7EF12BFF57324CAB1F99C968C0BF /* Quick.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Quick.xcconfig; sourceTree = "<group>"; };
 		DC07B6CC006238186A56EEC6E8D3CD88 /* Callsite.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Callsite.swift; path = Sources/Quick/Callsite.swift; sourceTree = "<group>"; };
@@ -245,6 +247,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		46BF6CB95112C49F8F798CBAACC34D93 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9B713AEDE2753EF1A94064954AB0AF0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		781856A3B264CF34E7D1D9E71363BB8D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -262,14 +272,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F7666152E3FAA3C88F0425D74F8C5BCB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C93B35265621F7B82EEB8817F310C954 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		FEF785D316E836E93C09637D3A3082CA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -281,14 +283,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		179DCCCA6A562EB950AF3200ECE09759 /* Duvel */ = {
-			isa = PBXGroup;
-			children = (
-				C284838CF3BC8737DD0A0DBE8618F2DE /* Classes */,
-			);
-			path = Duvel;
-			sourceTree = "<group>";
-		};
 		283DBD5C5897CC51DC3073C70F1D60C8 /* Pods-Duvel_Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,16 +366,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		51A17A0C45DECAF9F9406DD3FEF755AC /* Duvel */ = {
-			isa = PBXGroup;
-			children = (
-				179DCCCA6A562EB950AF3200ECE09759 /* Duvel */,
-				C255536E49724988539B47FE4E9A2261 /* Support Files */,
-			);
-			name = Duvel;
-			path = ../..;
-			sourceTree = "<group>";
-		};
 		59380A40CC2EEC775B8212566AEE9F22 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -399,6 +383,15 @@
 				283DBD5C5897CC51DC3073C70F1D60C8 /* Pods-Duvel_Tests */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		6A7182EBAEE9152318E89A24726AEFC9 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				04B248EE3DF188B6795476D06415EA24 /* Duvel.swift */,
+				2794EB5B977DE3D32480FD6008A38A77 /* Duvel+Context.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -436,34 +429,22 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		BADBF3E184ED3280920BE2C8C31B7B3F /* Duvel */ = {
+			isa = PBXGroup;
+			children = (
+				E1A241B3EC6314B602CD98F204C22BA6 /* Sources */,
+				D78E4E441D059520149B80AA5358214E /* Support Files */,
+			);
+			name = Duvel;
+			path = ../..;
+			sourceTree = "<group>";
+		};
 		BCE4AEA8C3BA16474682611331A4158A /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				51A17A0C45DECAF9F9406DD3FEF755AC /* Duvel */,
+				BADBF3E184ED3280920BE2C8C31B7B3F /* Duvel */,
 			);
 			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		C255536E49724988539B47FE4E9A2261 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				95277ACB63B2F01789193B0CB52F14DD /* Duvel.modulemap */,
-				5A4591D2ED6989B219C93808BE23FBCF /* Duvel.xcconfig */,
-				93A8D60CE220C04D653BDDA1B45B21D5 /* Duvel-dummy.m */,
-				5C7E28B908F99A251B903B64046563B3 /* Duvel-prefix.pch */,
-				D385D83E012A6868EC5AA280553742E1 /* Duvel-umbrella.h */,
-				CDBD146014A3760E3866AA9F3AF8EDBE /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/Duvel";
-			sourceTree = "<group>";
-		};
-		C284838CF3BC8737DD0A0DBE8618F2DE /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				338DC8FFEEB14F5F1A4A4F25ABD23376 /* ReplaceMe.swift */,
-			);
-			path = Classes;
 			sourceTree = "<group>";
 		};
 		CADC3EC948F24F3C262060ABA5F66D9A /* Quick */ = {
@@ -513,6 +494,20 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		D78E4E441D059520149B80AA5358214E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				00F971BFD8A911A26188146D4B523E12 /* Duvel.modulemap */,
+				AFFA5843DAA2EECADE5D496F6E12C299 /* Duvel.xcconfig */,
+				2C1346B73C3CF5960021FFDCBFD0FAB5 /* Duvel-dummy.m */,
+				63D2BBF087339D8DE99EB4479852BD38 /* Duvel-prefix.pch */,
+				1D2076C640666CC212E594BC29C6BB83 /* Duvel-umbrella.h */,
+				C8963FDA5FCD988F8AFCC62B205C8ECB /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/Duvel";
+			sourceTree = "<group>";
+		};
 		E180574B2455184195E3B30A5E5E6FF4 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -525,6 +520,14 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Nimble";
+			sourceTree = "<group>";
+		};
+		E1A241B3EC6314B602CD98F204C22BA6 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				6A7182EBAEE9152318E89A24726AEFC9 /* Core */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -549,11 +552,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B7E64DE40BAA1C8B5F29B621C6B0B951 /* Headers */ = {
+		D2A94CAD59ABD1C273846D8ACB5E98C7 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8F510A1B69261FC9895B5D872D49F76 /* Duvel-umbrella.h in Headers */,
+				73B012A5EAE9D08299C1984556DBE933 /* Duvel-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,23 +598,6 @@
 			productReference = 97FCDF85EBE10CCA81BA7375FB46A1CC /* Pods_Duvel_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		93BC99FA92C223836B5E7ABE474A9C8D /* Duvel */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F2D4B5092638240754EEEFF76FD75232 /* Build configuration list for PBXNativeTarget "Duvel" */;
-			buildPhases = (
-				B916AEA40B0F2A5B1E4DB8693996DFE5 /* Sources */,
-				F7666152E3FAA3C88F0425D74F8C5BCB /* Frameworks */,
-				B7E64DE40BAA1C8B5F29B621C6B0B951 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Duvel;
-			productName = Duvel;
-			productReference = 044759FD23162A773B4B83B57BD82159 /* Duvel.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		B3936170D648A8CEEB8B90C7EFF0E22B /* Quick */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CBFCBDAD92775F7AE004AF1ED8AC9D5A /* Build configuration list for PBXNativeTarget "Quick" */;
@@ -627,6 +613,23 @@
 			name = Quick;
 			productName = Quick;
 			productReference = E6819C0664BED33DCC61EFA4CBE01B8E /* Quick.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C2CD7D828004BB519D84E7AD0A3AAC8F /* Duvel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04A96A689585A3872D689AF8F3AEAC0C /* Build configuration list for PBXNativeTarget "Duvel" */;
+			buildPhases = (
+				55F20FA461F57C09B1E661E7533C1037 /* Sources */,
+				46BF6CB95112C49F8F798CBAACC34D93 /* Frameworks */,
+				D2A94CAD59ABD1C273846D8ACB5E98C7 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Duvel;
+			productName = Duvel;
+			productReference = 044759FD23162A773B4B83B57BD82159 /* Duvel.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		FF61C7C740C1B196A3B33F37B77DBC68 /* Nimble */ = {
@@ -667,7 +670,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				93BC99FA92C223836B5E7ABE474A9C8D /* Duvel */,
+				C2CD7D828004BB519D84E7AD0A3AAC8F /* Duvel */,
 				FF61C7C740C1B196A3B33F37B77DBC68 /* Nimble */,
 				17BB09AD34D9AF19619E48A7641C2F04 /* Pods-Duvel_Tests */,
 				B3936170D648A8CEEB8B90C7EFF0E22B /* Quick */,
@@ -738,6 +741,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		55F20FA461F57C09B1E661E7533C1037 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D4D0A08DEF0501588FC69F31B9F77D3 /* Duvel+Context.swift in Sources */,
+				D50733DC784E6F9C56ED860E4A838FA7 /* Duvel-dummy.m in Sources */,
+				2F644E9EC40830797966FFC920F590D2 /* Duvel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9C561AB89DE14B77CF917843E8CADFF7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -769,22 +782,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B916AEA40B0F2A5B1E4DB8693996DFE5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C46D1592C76704142ADF26E633668201 /* Duvel-dummy.m in Sources */,
-				FF4E6859C8F2923F0958D687703B0070 /* ReplaceMe.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		08098682982D53462A9F6224A8072D69 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Duvel;
-			target = 93BC99FA92C223836B5E7ABE474A9C8D /* Duvel */;
+			target = C2CD7D828004BB519D84E7AD0A3AAC8F /* Duvel */;
 			targetProxy = B0408823ADD7588299C22985378C9803 /* PBXContainerItemProxy */;
 		};
 		3E541BD88470EA04EC93F072870DCC84 /* PBXTargetDependency */ = {
@@ -903,35 +907,6 @@
 			};
 			name = Release;
 		};
-		57BE498D1D3966A6FB73D53926A88684 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5A4591D2ED6989B219C93808BE23FBCF /* Duvel.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Duvel/Duvel-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Duvel/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Duvel/Duvel.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = Duvel;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		61EBCB148B19412540FBEA68AE156189 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0123C787205C78A0B206D77802A3C638 /* Pods-Duvel_Tests.release.xcconfig */;
@@ -964,6 +939,65 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		7AD0A1E49E8F0B8E9F328D5B901D3FE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFFA5843DAA2EECADE5D496F6E12C299 /* Duvel.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Duvel/Duvel-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Duvel/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Duvel/Duvel.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Duvel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9DF2C8BD92ED35236AB4C382DC8BE438 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFFA5843DAA2EECADE5D496F6E12C299 /* Duvel.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Duvel/Duvel-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Duvel/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Duvel/Duvel.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Duvel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		B24B877A6B7B122820C683FDB47DCF24 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1066,36 +1100,6 @@
 			};
 			name = Release;
 		};
-		D739AD02BA2AFAD52D932E8D74575F50 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5A4591D2ED6989B219C93808BE23FBCF /* Duvel.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Duvel/Duvel-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Duvel/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Duvel/Duvel.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = Duvel;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		F14745E2F2D90E33DB7401B9ED7C5F16 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E124D19BC9A195791938A5946C03B103 /* Nimble.xcconfig */;
@@ -1129,6 +1133,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		04A96A689585A3872D689AF8F3AEAC0C /* Build configuration list for PBXNativeTarget "Duvel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DF2C8BD92ED35236AB4C382DC8BE438 /* Debug */,
+				7AD0A1E49E8F0B8E9F328D5B901D3FE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1161,15 +1174,6 @@
 			buildConfigurations = (
 				0D5BC552D986BEFDE590B099C25782E4 /* Debug */,
 				2103A81440B8D18A3D1160D35B74EDCC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F2D4B5092638240754EEEFF76FD75232 /* Build configuration list for PBXNativeTarget "Duvel" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D739AD02BA2AFAD52D932E8D74575F50 /* Debug */,
-				57BE498D1D3966A6FB73D53926A88684 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

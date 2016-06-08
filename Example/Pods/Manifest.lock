@@ -13,7 +13,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Duvel: 81672b2468c12c2fd5c5b5df0c45816aca0792ea
+  Duvel: 575680322d0a6cf0d12f9d9c2280b04d42a905c1
   Nimble: 703854335d181df169bbca9c97117b5cf8c47c1d
   Quick: 18d057bc66451eedd5d1c8dc99ba2a5db6e60226
 
