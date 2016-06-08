@@ -27,4 +27,4 @@ Jelle Vandebeeck, jelle@fousa.be
 
 ## License
 
-Stella is available under the MIT license. See the LICENSE file for more info.
+Duvel is available under the MIT license. See the LICENSE file for more info.
