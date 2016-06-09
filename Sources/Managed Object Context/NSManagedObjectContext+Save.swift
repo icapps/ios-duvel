@@ -25,7 +25,7 @@ extension NSManagedObjectContext {
     /// - Parameter changes: The changes closure returns a local context on which you should apply the changes.
     /// - Parameter completion: The completion closure is called when the saving finished.
     public func perform(changes changes: (context: NSManagedObjectContext) -> (), completion: (() -> ())? = nil) {
-        let localContext = childContext()
+        let localContext = createChildContext()
         localContext.performBlock {
             changes(context: localContext)
             localContext.performSaveIfNeeded()

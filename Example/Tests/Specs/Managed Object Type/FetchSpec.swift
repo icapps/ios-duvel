@@ -129,7 +129,7 @@ class FetchSpec: QuickSpec {
                     
                     var completed = false
                     duvel.mainContext.perform(changes: { context in
-                        let beerInContext: Beer? = context.inContext(beer)
+                        let beerInContext = beer.to(context: context)
                         expect(beer.managedObjectContext).toNot(equal(context))
                         expect(beerInContext?.managedObjectContext).to(equal(context))
                     }, completion: {

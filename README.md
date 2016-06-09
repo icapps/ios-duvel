@@ -175,7 +175,7 @@ Sometimes you'll want update an existing `NSManagedObject`. If you want to do so
 ```swift
 let existingObject: SomeManagedObject = ...
 context.perform(changes: { localContext in
-  let localObject = localContext.inContext(existingObject)
+  let localObject = existingObject.to(context: localContext)
   localObject.name = "Leroy"
 }, completion: {
   ...
