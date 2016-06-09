@@ -9,8 +9,6 @@
 import CoreData
 
 /// `Duvel` is responsible for creating the persistent stores and creating the contexts we want to use.
-///
-/// You will be able to use `Duvel` as a singleton (with the `sharedInstance` property) or just as an instance you locate somewhere in your application.
 public class Duvel {
     
     // MARK: - Private
@@ -26,11 +24,6 @@ public class Duvel {
     public let backgroundContext = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
     
     // MARK: - Init
-    
-    /// Use this singlethon property when you are sure you want to use only one `Duvel` instance throughout your entire application.
-    public static var sharedInstance: Duvel? = {
-        return try? Duvel()
-    }()
     
     /// Initalize `Duvel` and create a managed object model and a persistent store coordinate with a linked store.
     ///

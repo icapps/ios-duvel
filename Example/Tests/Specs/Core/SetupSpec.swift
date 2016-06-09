@@ -11,6 +11,12 @@ import Nimble
 import CoreData
 import Duvel
 
+extension Duvel {
+    static var sharedInstance: Duvel? = {
+        return try? Duvel()
+    }()
+}
+
 class SetupSpec: QuickSpec {
     override func spec() {
         

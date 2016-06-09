@@ -48,10 +48,17 @@ let managedObjectModel = NSManagedObjectModel.mergedModelFromBundles(nil)
 let duvel = try! Duvel(managedObjectModel: managedObjectModel)
 ```
 
-You are also able to use is as a singleton.
+Is you want to instantiate `Duvel` as a `sharedInstance` that you want to use throughout your application without passing the instance between the different classes. Than extend `Duvel` like this.
 
 ```swift
-// This will create a default store.
+extension Duvel {
+    static var sharedInstance: Duvel? = {
+        // Add more configuration to the instance as shown in the above code.
+        return try? Duvel()
+    }()
+}
+
+// This will encapsulate `Duvel` in an singleton instance.
 Duvel.sharedInstance
 ```
 
@@ -186,7 +193,6 @@ context.perform(changes: { localContext in
 
 Here is an overview what is on our todo list.
 
-- [ ] The `sharedInstance` should be more configurable with a closure.
 - [ ] Type safety for attribute creation.
 - [ ] Add notifications.
 
