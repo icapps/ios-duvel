@@ -125,6 +125,23 @@ class FetchSpec: QuickSpec {
                     expect(duvel.mainContext.count(Beer.self, withPredicate: predicate)).to(equal(2))
                 }
             }
+            
+            context("convert to context") {
+                it("should be able to convert an object to a context") {
+                    let beer: Beer = duvel.mainContext.create() { $0.name = "Duvel" }
+                    
+                    var completed = false
+                    duvel.mainContext.perform(changes: { context in
+                        let beerInContext: Beer? = context.inContext(beer)
+                        expect(beer.managedObjectContext).toNot(equal(context))
+                        expect(beerInContext?.managedObjectContext).to(equal(context))
+                    }, completion: {
+                        completed = true
+                    })
+                    
+                    expect(completed).toEventually(beTrue())
+                }
+            }
         }
         
     }

@@ -20,3 +20,26 @@ extension Duvel {
     }
     
 }
+
+extension NSManagedObjectContext {
+    
+    public func inContext<T: NSManagedObject where T: ManagedObjectType>(object: T) -> T? {
+        if object.objectID.temporaryID {
+            do {
+                try object.managedObjectContext?.obtainPermanentIDsForObjects([object])
+            } catch {
+                return nil
+            }
+        }
+        
+        let objectInContext = try? existingObjectWithID(object.objectID)
+        return objectInContext as? T
+    }
+    
+    internal func childContext() -> NSManagedObjectContext {
+        let childContext = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
+        childContext.parentContext = self
+        return childContext
+    }
+    
+}
