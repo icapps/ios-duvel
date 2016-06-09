@@ -74,18 +74,16 @@ Changes made on the `backgroundContext` are automatically merged to the `mainCon
 
 ### Creation
 
-You can create a `NSManagedObject` in a context. The `NSManagedObject` you want to create has to conform to the `ManagedObjectType` protocol.
+You can create a `NSManagedObject` in a context. The `NSManagedObject` you want to create has to conform to the `ManagedObjectType` protocol. In this case `SomeManagedObject` conforms to `ManagedObjectType`.
 
 ```swift
-let object: SomeManagedObject = context.create()
+let object = SomeManagedObject.create(inContext: context)
 ```
-
-You have to explicitly set the type or otherwise the `create()` will not know what type to create.
 
 We can also immediately set the properties during the creation process.
 
 ```swift
-let object: SomeManagedObject = context.create() { innerObject {
+let object = SomeManagedObject.create(inContext: context) { innerObject {
   innerObject.name = "Leroy"
 }
 ```
@@ -179,8 +177,8 @@ context.perform(changes: { localContext in
 
 Here is an overview what is on our todo list.
 
-- [ ] The `sharedInstance` should be more configurable with a closure.
 - [ ] Move some functions to an `NSManagedObject` extension.
+- [ ] The `sharedInstance` should be more configurable with a closure.
 - [ ] Type safety for attribute creation.
 - [ ] Add notifications.
 

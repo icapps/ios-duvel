@@ -8,28 +8,31 @@
 
 import CoreData
 
-public extension NSManagedObjectContext {
+/// Extends some extra create functionality to `ManagedObjectType`.
+public extension ManagedObjectType {
     
-    /// Create the `NSManagedObject` in the current context.
+    /// Create a `NSManagedObject` in the given context.
     /// 
     /// ```
-    /// let object: SomeManagedObject = yourContext.create()
+    /// let object = SomeManagedObject.create(inContext: context)
     /// ```
     ///
     /// You are able to immediatly update the properties if you apply them on the given object returned by the attributes callback.
     ///
     /// ```
-    /// let object: SomeManagedObject = yourContext.create() { innerObject in
+    /// let object = SomeManagedObject.create(inContext: context) { innerObject in
     ///     innerObject.name = "Some name"
     /// }
     /// ```
     ///
+    /// - Parameter context: This is the context in which you want to create the object.
     /// - Parameter attributes: This is a callback with the created object on which you want to change some properties.
-    public func create<T: NSManagedObject where T: ManagedObjectType>(
-        attributes: ((object: T) -> ())? = nil
-    ) -> T {
-        guard let object = NSEntityDescription.insertNewObjectForEntityForName(T.entityName, inManagedObjectContext: self) as? T else {
-            fatalError("Entity \(T.entityName) does not correspond to \(T.self)")
+    public static func create(
+        inContext context: NSManagedObjectContext,
+        attributes: ((object: Self) -> ())? = nil
+    ) -> Self {
+        guard let object = NSEntityDescription.insertNewObjectForEntityForName(Self.entityName, inManagedObjectContext: context) as? Self else {
+            fatalError("Entity \(Self.entityName) does not correspond to \(Self.self)")
         }
         attributes?(object: object)
         return object

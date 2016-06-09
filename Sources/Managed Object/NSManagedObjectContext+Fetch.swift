@@ -36,7 +36,7 @@ public extension NSManagedObjectContext {
         }
         
         // Create the object.
-        return create() { object in
+        return T.create(inContext: self) { object in
             object.setValuesForKeysWithDictionary([attribute: value])
         } as T
     }

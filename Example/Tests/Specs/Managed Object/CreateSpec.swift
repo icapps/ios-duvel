@@ -23,12 +23,12 @@ class CreateSpec: QuickSpec {
             
             context("create") {
                 it("should create an entity") {
-                    let beer: Beer = duvel.mainContext.create()
+                    let beer = Beer.create(inContext: duvel.mainContext)
                     expect(beer.self).to(equal(beer))
                 }
                 
                 it("should create an entity and set it's properties") {
-                    let beer: Beer = duvel.mainContext.create() { beer in
+                    let beer: Beer = Beer.create(inContext: duvel.mainContext) { beer in
                         beer.name = "Duvel"
                     }
                     expect(beer.name).to(equal("Duvel"))
@@ -42,7 +42,7 @@ class CreateSpec: QuickSpec {
                 }
                 
                 it("should not create a found entity") {
-                    let _: Beer = duvel.mainContext.create() { $0.name = "Vedett" }
+                    let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Vedett" }
                     let beer: Beer? = duvel.mainContext.first()
                     expect(beer?.name).to(equal("Vedett"))
                     

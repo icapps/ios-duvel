@@ -23,8 +23,8 @@ class DeleteSpec: QuickSpec {
             
             context("delete") {
                 it("should not delete any object") {
-                    let _: Beer = duvel.mainContext.create() { $0.name = "Duvel" }
-                    let _: Beer = duvel.mainContext.create() { $0.name = "Stella" }
+                    let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Duvel" }
+                    let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Stella" }
                     
                     let predicate = NSPredicate(format: "name = %@", "l")
                     duvel.mainContext.deleteAll(Beer.self, withPredicate: predicate)
@@ -32,17 +32,17 @@ class DeleteSpec: QuickSpec {
                 }
                 
                 it("should delete all objects") {
-                    let _: Beer = duvel.mainContext.create() { $0.name = "Duvel" }
-                    let _: Beer = duvel.mainContext.create() { $0.name = "Stella" }
+                    let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Duvel" }
+                    let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Stella" }
                     
                     duvel.mainContext.deleteAll(Beer.self)
                     expect(duvel.mainContext.count(Beer.self)).to(equal(0))
                 }
                 
                 it("should delete all objects from the predicate") {
-                    let _: Beer = duvel.mainContext.create() { $0.name = "Duvel" }
-                    let _: Beer = duvel.mainContext.create() { $0.name = "Stella" }
-                    let _: Beer = duvel.mainContext.create() { $0.name = "Vedette" }
+                    let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Duvel" }
+                    let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Stella" }
+                    let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Vedette" }
                     
                     let predicate = NSPredicate(format: "name CONTAINS %@", "l")
                     duvel.mainContext.deleteAll(Beer.self, withPredicate: predicate)

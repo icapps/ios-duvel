@@ -36,14 +36,14 @@ class FetchSpec: QuickSpec {
                 }
                 
                 it("should find a first object") {
-                    let _: Beer = duvel.mainContext.create() { $0.name = "Duvel" }
+                    let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Duvel" }
                     
                     let beer: Beer? = duvel.mainContext.first()
                     expect(beer).toNot(beNil())
                 }
                 
                 it("should find a first object with attribute") {
-                    let _: Beer = duvel.mainContext.create() { $0.name = "Duvel" }
+                    let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Duvel" }
                     
                     let beer: Beer? = duvel.mainContext.first(with: "name", and: "Duvel")
                     expect(beer).toNot(beNil())
@@ -51,8 +51,8 @@ class FetchSpec: QuickSpec {
                 }
                 
                 it("should find a first object depending on the predicate") {
-                    let _: Beer = duvel.mainContext.create() { $0.name = "Duvel" }
-                    let _: Beer = duvel.mainContext.create() { $0.name = "Stella" }
+                    let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Duvel" }
+                    let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Stella" }
                     
                     let predicate = NSPredicate(format: "name = %@", "Stella")
                     let beer: Beer? = duvel.mainContext.first(withPredicate: predicate)
@@ -60,8 +60,8 @@ class FetchSpec: QuickSpec {
                 }
                 
                 it("should find a first object depending on the sort descriptor") {
-                    let _: Beer = duvel.mainContext.create() { $0.name = "Duvel" }
-                    let _: Beer = duvel.mainContext.create() { $0.name = "Stella" }
+                    let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Duvel" }
+                    let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Stella" }
                     
                     let descriptor = NSSortDescriptor(key: "name", ascending: false)
                     let beer: Beer? = duvel.mainContext.first(withSortDescriptors: [descriptor])
@@ -76,17 +76,17 @@ class FetchSpec: QuickSpec {
                 }
                 
                 it("should find two objects") {
-                    let _: Beer = duvel.mainContext.create() { $0.name = "Duvel" }
-                    let _: Beer = duvel.mainContext.create() { $0.name = "Stella" }
+                    let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Duvel" }
+                    let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Stella" }
                     
                     let beers: [Beer] = duvel.mainContext.all()
                     expect(beers.count).to(equal(2))
                 }
                 
                 it("should find two objects depending on the predicate") {
-                    let _: Beer = duvel.mainContext.create() { $0.name = "Duvel" }
-                    let _: Beer = duvel.mainContext.create() { $0.name = "Stella" }
-                    let _: Beer = duvel.mainContext.create() { $0.name = "Vedett" }
+                    let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Duvel" }
+                    let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Stella" }
+                    let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Vedett" }
                     
                     let predicate = NSPredicate(format: "name CONTAINS %@", "l")
                     let beers: [Beer] = duvel.mainContext.all(withPredicate: predicate)
@@ -94,8 +94,8 @@ class FetchSpec: QuickSpec {
                 }
                 
                 it("should find two objects sorted with the sort descriptor") {
-                    let _: Beer = duvel.mainContext.create() { $0.name = "Duvel" }
-                    let _: Beer = duvel.mainContext.create() { $0.name = "Stella" }
+                    let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Duvel" }
+                    let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Stella" }
                     
                     let descriptor = NSSortDescriptor(key: "name", ascending: false)
                     let beers: [Beer] = duvel.mainContext.all(withSortDescriptors: [descriptor])
@@ -110,16 +110,16 @@ class FetchSpec: QuickSpec {
                 }
                 
                 it("should find two objects") {
-                    let _: Beer = duvel.mainContext.create() { $0.name = "Duvel" }
-                    let _: Beer = duvel.mainContext.create() { $0.name = "Stella" }
+                    let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Duvel" }
+                    let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Stella" }
                     
                     expect(duvel.mainContext.count(Beer.self)).to(equal(2))
                 }
                 
                 it("should find two objects depending on the predicate") {
-                    let _: Beer = duvel.mainContext.create() { $0.name = "Duvel" }
-                    let _: Beer = duvel.mainContext.create() { $0.name = "Stella" }
-                    let _: Beer = duvel.mainContext.create() { $0.name = "Vedett" }
+                    let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Duvel" }
+                    let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Stella" }
+                    let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Vedett" }
                     
                     let predicate = NSPredicate(format: "name CONTAINS %@", "l")
                     expect(duvel.mainContext.count(Beer.self, withPredicate: predicate)).to(equal(2))
@@ -128,7 +128,7 @@ class FetchSpec: QuickSpec {
             
             context("convert to context") {
                 it("should be able to convert an object to a context") {
-                    let beer: Beer = duvel.mainContext.create() { $0.name = "Duvel" }
+                    let beer: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Duvel" }
                     
                     var completed = false
                     duvel.mainContext.perform(changes: { context in
