@@ -45,12 +45,13 @@ public extension ManagedObjectType {
         }
         
         // Create the object.
-        if let object = create(inContext: context) as? NSManagedObject {
-            object.setValuesForKeysWithDictionary([attribute: value])
-            return object as! Self
+        var object: Self? = nil
+        if let createdObject = create(inContext: context) as? NSManagedObject {
+            createdObject.setValuesForKeysWithDictionary([attribute: value])
+            object = createdObject as? Self
         }
 
-        return nil
+        return object
     }
     
     /// Fetch the first `NSManagedObject` that matches the predicate and is sorted in a way.
@@ -67,7 +68,7 @@ public extension ManagedObjectType {
     public static func first(inContext context: NSManagedObjectContext, withPredicate predicate: NSPredicate? = nil, withSortDescriptors descriptors: [NSSortDescriptor]? = nil) -> Self? {
         let request = fetchRequest(withPredicate: predicate, withSortDescriptors: descriptors)
         request.fetchLimit = 1
-        return execute(fetchRequest: request, inContext: context).first as! Self?
+        return execute(fetchRequest: request, inContext: context).first
     }
     
     /// Fetch all `NSManagedObject`'s that matches the predicate and is sorted in a way.
@@ -83,7 +84,7 @@ public extension ManagedObjectType {
     /// - Parameter descriptors: The sort descriptors used for sorting the result.
     public static func all(inContext context: NSManagedObjectContext, withPredicate predicate: NSPredicate? = nil, withSortDescriptors descriptors: [NSSortDescriptor]? = nil) -> [Self] {
         let request = fetchRequest(withPredicate: predicate, withSortDescriptors: descriptors)
-        return execute(fetchRequest: request, inContext: context) as! [Self]
+        return execute(fetchRequest: request, inContext: context)
     }
     
     /// Count the number of `NSManagedObject`'s that matches the predicate and is sorted in a way.
