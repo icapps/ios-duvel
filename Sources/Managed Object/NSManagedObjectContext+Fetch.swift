@@ -10,6 +10,15 @@ import CoreData
 
 public extension NSManagedObjectContext {
     
+    /// Fetch the first `NSManagedObject` where the attribute has a certain value.
+    /// 
+    /// ```
+    /// let object: SomeManagedObject? = context.first(with: "name", value: "Leroy")
+    /// ```
+    ///
+    /// - Parameter attribute: The object attribute you want to check.
+    /// - Parameter value: The object attribute's value you want to check.
+    /// - Parameter createIfNeeded: Create the object with the attribute's value if not found.
     public func first<T: NSManagedObject where T: ManagedObjectType>(
         with attribute: String,
         and value: AnyObject,
@@ -32,6 +41,16 @@ public extension NSManagedObjectContext {
         } as T
     }
     
+    /// Fetch the first `NSManagedObject` that matches the predicate and is sorted in a way.
+    ///
+    /// ```
+    /// let predicate: NSPredicate = ...
+    /// let descriptors: [NSSortDescriptor] = ...
+    /// let object: SomeManagedObject? = context.first(withPredicate: predicate, withSortDescriptors: descriptors)
+    /// ```
+    ///
+    /// - Parameter predicate: The predicate used for filtering.
+    /// - Parameter descriptors: The sort descriptors used for sorting the result.
     public func first<T: NSManagedObject where T: ManagedObjectType>(
         withPredicate predicate: NSPredicate? = nil,
         withSortDescriptors descriptors: [NSSortDescriptor]? = nil
@@ -41,6 +60,16 @@ public extension NSManagedObjectContext {
         return execute(fetchRequest: request).first as? T
     }
     
+    /// Fetch all `NSManagedObject`'s that matches the predicate and is sorted in a way.
+    ///
+    /// ```
+    /// let predicate: NSPredicate = ...
+    /// let descriptors: [NSSortDescriptor] = ...
+    /// let objects: [SomeManagedObject] = context.all(withPredicate: predicate, withSortDescriptors: descriptors)
+    /// ```
+    ///
+    /// - Parameter predicate: The predicate used for filtering.
+    /// - Parameter descriptors: The sort descriptors used for sorting the result.
     public func all<T: NSManagedObject where T: ManagedObjectType>(
         withPredicate predicate: NSPredicate? = nil,
         withSortDescriptors descriptors: [NSSortDescriptor]? = nil
@@ -49,6 +78,16 @@ public extension NSManagedObjectContext {
         return execute(fetchRequest: request) as! [T]
     }
     
+    /// Count the number of `NSManagedObject`'s that matches the predicate and is sorted in a way.
+    ///
+    /// ```
+    /// let predicate: NSPredicate = ...
+    /// let descriptors: [NSSortDescriptor] = ...
+    /// let count = context.count(SomeManagedObject.self, withSortDescriptors: descriptors)
+    /// ```
+    ///
+    /// - Parameter type: The `NSManagedObject`'s type you want to count.
+    /// - Parameter descriptors: The sort descriptors used for sorting the result.
     public func count<T: NSManagedObject where T: ManagedObjectType>(
         type: T.Type,
         withPredicate predicate: NSPredicate? = nil

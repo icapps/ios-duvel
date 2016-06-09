@@ -10,6 +10,21 @@ import CoreData
 
 public extension NSManagedObjectContext {
     
+    /// Create the `NSManagedObject` in the current context.
+    /// 
+    /// ```
+    /// let object: SomeManagedObject = yourContext.create()
+    /// ```
+    ///
+    /// You are able to immediatly update the properties if you apply them on the given object returned by the attributes callback.
+    ///
+    /// ```
+    /// let object: SomeManagedObject = yourContext.create() { innerObject in
+    ///     innerObject.name = "Some name"
+    /// }
+    /// ```
+    ///
+    /// - Parameter attributes: This is a callback with the created object on which you want to change some properties.
     public func create<T: NSManagedObject where T: ManagedObjectType>(
         attributes: ((object: T) -> ())? = nil
     ) -> T {
