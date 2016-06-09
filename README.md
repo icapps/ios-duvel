@@ -179,6 +179,7 @@ context.perform(changes: { localContext in
 
 Here is an overview what is on our todo list.
 
+- [ ] The `sharedInstance` should be more configurable with a closure.
 - [ ] Move some functions to an `NSManagedObject` extension.
 - [ ] Type safety for attribute creation.
 - [ ] Add notifications.
