@@ -32,12 +32,7 @@ public extension ManagedObjectType {
     /// - Parameter attribute: The object attribute you want to check.
     /// - Parameter value: The object attribute's value you want to check.
     /// - Parameter createIfNeeded: Create the object with the attribute's value if not found.
-    public static func first(
-        inContext context: NSManagedObjectContext,
-        with attribute: String,
-        and value: AnyObject,
-        createIfNeeded: Bool = false
-    ) -> Self? {
+    public static func first(inContext context: NSManagedObjectContext, with attribute: String, and value: AnyObject, createIfNeeded: Bool = false) -> Self? {
         let predicate = NSPredicate(format: "%K = %@", argumentArray: [attribute, value])
         if let object = first(inContext: context, withPredicate: predicate) {
             return object
@@ -69,11 +64,7 @@ public extension ManagedObjectType {
     /// - Parameter context: This is the context in which you want to fetch the object.
     /// - Parameter predicate: The predicate used for filtering.
     /// - Parameter descriptors: The sort descriptors used for sorting the result.
-    public static func first(
-        inContext context: NSManagedObjectContext,
-        withPredicate predicate: NSPredicate? = nil,
-        withSortDescriptors descriptors: [NSSortDescriptor]? = nil
-    ) -> Self? {
+    public static func first(inContext context: NSManagedObjectContext, withPredicate predicate: NSPredicate? = nil, withSortDescriptors descriptors: [NSSortDescriptor]? = nil) -> Self? {
         let request = fetchRequest(withPredicate: predicate, withSortDescriptors: descriptors)
         request.fetchLimit = 1
         return execute(fetchRequest: request, inContext: context).first as! Self?
@@ -90,11 +81,7 @@ public extension ManagedObjectType {
     /// - Parameter context: This is the context in which you want to fetch the objects.
     /// - Parameter predicate: The predicate used for filtering.
     /// - Parameter descriptors: The sort descriptors used for sorting the result.
-    public static func all(
-        inContext context: NSManagedObjectContext,
-        withPredicate predicate: NSPredicate? = nil,
-        withSortDescriptors descriptors: [NSSortDescriptor]? = nil
-    ) -> [Self] {
+    public static func all(inContext context: NSManagedObjectContext, withPredicate predicate: NSPredicate? = nil, withSortDescriptors descriptors: [NSSortDescriptor]? = nil) -> [Self] {
         let request = fetchRequest(withPredicate: predicate, withSortDescriptors: descriptors)
         return execute(fetchRequest: request, inContext: context) as! [Self]
     }
@@ -108,10 +95,7 @@ public extension ManagedObjectType {
     ///
     /// - Parameter context: This is the context in which you want to count the objects.
     /// - Parameter predicate: The predicate used for filtering.
-    public static func count(
-        inContext context: NSManagedObjectContext,
-        withPredicate predicate: NSPredicate? = nil
-    ) -> Int {
+    public static func count(inContext context: NSManagedObjectContext, withPredicate predicate: NSPredicate? = nil) -> Int {
         let request = fetchRequest(withPredicate: predicate)
         request.includesSubentities = false
         return context.countForFetchRequest(request, error: nil)
@@ -119,10 +103,7 @@ public extension ManagedObjectType {
     
     // MARK: - Fetch request
     
-    private static func execute(
-        fetchRequest request: NSFetchRequest,
-        inContext context: NSManagedObjectContext
-     ) -> [Self] {
+    private static func execute(fetchRequest request: NSFetchRequest, inContext context: NSManagedObjectContext) -> [Self] {
         var fetchedObjects = [Self]()
         context.performBlockAndWait {
             do {

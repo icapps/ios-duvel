@@ -26,10 +26,7 @@ public extension ManagedObjectType {
     ///
     /// - Parameter context: This is the context in which you want to delete the objects.
     /// - Parameter predicate: You can filter by giving a predicate.
-    public static func deleteAll(
-        inContext context: NSManagedObjectContext,
-        withPredicate predicate: NSPredicate? = nil
-    ) {
+    public static func deleteAll(inContext context: NSManagedObjectContext, withPredicate predicate: NSPredicate? = nil) {
         let objects = all(inContext: context, withPredicate: predicate)
         for object in objects {
             object.delete(inContext: context)
@@ -43,9 +40,7 @@ public extension ManagedObjectType {
     /// ```
     ///
     /// - Parameter context: This is the context in which you want to delete the objects.
-    public func delete(
-        inContext context: NSManagedObjectContext
-    ) {
+    public func delete(inContext context: NSManagedObjectContext) {
         guard let object = self as? NSManagedObject else {
             fatalError("\(self) isn't a NSManagedObject")
         }

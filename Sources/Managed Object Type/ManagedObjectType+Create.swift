@@ -27,10 +27,7 @@ public extension ManagedObjectType {
     ///
     /// - Parameter context: This is the context in which you want to create the object.
     /// - Parameter attributes: This is a callback with the created object on which you want to change some properties.
-    public static func create(
-        inContext context: NSManagedObjectContext,
-        attributes: ((object: Self) -> ())? = nil
-    ) -> Self {
+    public static func create(inContext context: NSManagedObjectContext, attributes: ((object: Self) -> ())? = nil) -> Self {
         guard let object = NSEntityDescription.insertNewObjectForEntityForName(entityName, inManagedObjectContext: context) as? Self else {
             fatalError("Entity \(entityName) does not correspond to \(self)")
         }
