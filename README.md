@@ -11,6 +11,13 @@
 ## TOC
 
 - [Installation](#installation)
+- [Features](#features)
+  - [Initialize](#initialize)
+  - [Context](#context)
+  - [Creation](#creation)
+  - [Deletion](#deletion)
+  - [Fetching](#fetching)
+  - [Saving](#saving)
 - [Bucket List](#bucket-list)
 - [Author](#author)
 - [License](#license)
@@ -21,6 +28,151 @@ Duvel is available through [CocoaPods](http://cocoapods.org). To install it, sim
 
 ```ruby
 pod 'Duvel', '~> 0.1'
+```
+
+## Features
+
+### Initialize
+
+Initialize the usage of `Duvel` by using a `Duvel` instance. When initializing the instance you will create the persistent store.
+
+```swift
+// Create the default store.
+let duvel = try! Duvel()
+
+// Create an in memory store.
+let duvel = try! Duvel(storeType: NSInMemoryStoreType)
+
+// Create a store with a custom managed object model.
+let managedObjectModel = NSManagedObjectModel.mergedModelFromBundles(nil)
+let duvel = try! Duvel(managedObjectModel: managedObjectModel)
+```
+
+You are also able to use is as a singleton.
+
+```swift
+// This will create a default store.
+Duvel.sharedInstance
+```
+
+### Context
+
+There are three ways to access some contexts.
+
+```swift
+// Get the main `NSManagedObjectContext`.
+Duvel.sharedInstance.mainContext
+
+// Get the background `NSManagedObjectContext`.
+Duvel.sharedInstance.backgroundContext
+
+// Get the `NSManagedObjectContext` for the current thread.
+Duvel.sharedInstance.currentContext
+```
+
+Changes made on the `backgroundContext` are automatically merged to the `mainContext` when succeeded.
+
+### Creation
+
+You can create a `NSManagedObject` in a context. The `NSManagedObject` you want to create has to conform to the `ManagedObjectType` protocol.
+
+```swift
+let object: SomeManagedObject = context.create()
+```
+
+You have to explicitly set the type or otherwise the `create()` will not know what type to create.
+
+We can also immediately set the properties during the creation process.
+
+```swift
+let object: SomeManagedObject = context.create() { innerObject {
+  innerObject.name = "Leroy"
+}
+```
+
+**BE AWARE!** Nothing is persisted to the store until you save.
+
+### Deletion
+
+There is a possibility to delete all the `NSManagedObject`'s depending on the given `NSPredicate`. When no predicate is given we delete all the objects for the given type.
+
+```swift
+// Delete all the objects.
+context.deleteAll(SomeManagedObject.self)
+
+// Delete the objects that match a predicate.
+let predicate: NSPredicate = ...
+context.deleteAll(SomeManagedObject.self, withPredicate: predicate)
+```
+
+If you just want to delete a single object, you can use the one defined in Core Data.
+
+```swift
+context.deleteObject(someObject)
+```
+
+**BE AWARE!** Nothing is persisted to the store until you save.
+
+### Fetching
+
+Fetch the first `NSManagedObject` depending on the value of the attribute.
+
+When no object was found for this value, you can create a new one with the attribute set to the given value. This will be done when the `createIfNeeded` parameter is set to true.
+
+```swift
+let object: SomeManagedObject? = context.first(with: "name", value: "Leroy")
+let object: SomeManagedObject? = context.first(with: "name", value: "Leroy", createIfNeeded: true)
+```
+
+You can also look for the first `NSManagedObject` found for the given predicate. You can also indicate the sort order of the fetched results so that you can eventually fetch the last object.
+
+```swift
+let predicate: NSPredicate = ...
+let descriptors: [NSSortDescriptor] = ...
+let object: SomeManagedObject? = context.first(withPredicate: predicate, withSortDescriptors: descriptors)
+```
+
+Fetch all the objects for a certain type. You can specify a filter by giving an `NSPredicate` and a sort order by providing a list of `NSSortDescriptor`'s.
+
+```swift
+let predicate: NSPredicate = ...
+let descriptors: [NSSortDescriptor] = ...
+let objects: [SomeManagedObject] = context.all(withPredicate: predicate, withSortDescriptors: descriptors)
+```
+
+Count the number of object. You can specify a filter by giving an `NSPredicate`.
+
+```swift
+let predicate: NSPredicate = ...
+let count = context.count(SomeManagedObject.self, withPredicate: predicate)
+```
+
+### Saving
+
+Persist the changes to the store by using the `perform` function provided on the context.
+
+This function will apply the changes to a child context that is created from the initial context. And when these changes are successfully applies they will be merged into the initial context.
+
+```swift
+context.perform(changes: { localContext in
+  // Modify objects inside this closure. At the end of the closure the changes will be
+  // automatically persisted to the store.
+  // Make sure you do the changes on the given `localContext`.
+}, completion: {
+  // This completion closure will be called when `Duvel` finished writing to the store.
+})
+```
+
+Sometimes you'll want update an existing `NSManagedObject`. If you want to do so and use the `perform` function, than you'll probably need to convert to object to an object from the `localContext`.
+
+```swift
+let existingObject: SomeManagedObject = ...
+context.perform(changes: { localContext in
+  let localObject = localContext.inContext(existingObject)
+  localObject.name = "Leroy"
+}, completion: {
+  ...
+})
 ```
 
 ## Bucket List
