@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		621448B41D097398004F72E7 /* DeleteSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621448B31D097398004F72E7 /* DeleteSpec.swift */; };
 		621A5AF31D08287100CA812B /* ContextSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621A5AF21D08287100CA812B /* ContextSpec.swift */; };
 		621A5AF61D0828D600CA812B /* SetupSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621A5AF51D0828D600CA812B /* SetupSpec.swift */; };
 		621A5AFE1D0866F500CA812B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 621A5AFC1D0866F500CA812B /* Model.xcdatamodeld */; };
@@ -24,6 +25,7 @@
 		5EDC5DE495B02D59C6F53281 /* Pods-Duvel_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Duvel_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Duvel_Example/Pods-Duvel_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* Duvel_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Duvel_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		621448B31D097398004F72E7 /* DeleteSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteSpec.swift; sourceTree = "<group>"; };
 		621A5AF21D08287100CA812B /* ContextSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextSpec.swift; sourceTree = "<group>"; };
 		621A5AF51D0828D600CA812B /* SetupSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupSpec.swift; sourceTree = "<group>"; };
 		621A5AFD1D0866F500CA812B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				621A5B0F1D08B96C00CA812B /* CreateSpec.swift */,
+				621448B31D097398004F72E7 /* DeleteSpec.swift */,
 				621A5B071D08B50E00CA812B /* EntitySpec.swift */,
 				621A5B151D08C65500CA812B /* FetchSpec.swift */,
 			);
@@ -265,6 +268,7 @@
 				621A5AF31D08287100CA812B /* ContextSpec.swift in Sources */,
 				621A5B101D08B96C00CA812B /* CreateSpec.swift in Sources */,
 				621A5AF61D0828D600CA812B /* SetupSpec.swift in Sources */,
+				621448B41D097398004F72E7 /* DeleteSpec.swift in Sources */,
 				621A5B0A1D08B56B00CA812B /* Beer.swift in Sources */,
 				621A5AFE1D0866F500CA812B /* Model.xcdatamodeld in Sources */,
 				621A5B081D08B50E00CA812B /* EntitySpec.swift in Sources */,
