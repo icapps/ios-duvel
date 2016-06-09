@@ -22,7 +22,7 @@ public extension NSManagedObjectContext {
     public func first<T: NSManagedObject where T: ManagedObjectType>(
         with attribute: String,
         and value: AnyObject,
-        createIfNeeded createIfNeeded: Bool = false
+        createIfNeeded: Bool = false
     ) -> T? {
         let predicate = NSPredicate(format: "%K = %@", argumentArray: [attribute, value])
         if let object: T = first(withPredicate: predicate) {
