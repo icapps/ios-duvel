@@ -7,9 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		621448B41D097398004F72E7 /* DeleteSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621448B31D097398004F72E7 /* DeleteSpec.swift */; };
+		621448B91D0995D3004F72E7 /* SaveSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621448B81D0995D3004F72E7 /* SaveSpec.swift */; };
 		621A5AF31D08287100CA812B /* ContextSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621A5AF21D08287100CA812B /* ContextSpec.swift */; };
 		621A5AF61D0828D600CA812B /* SetupSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621A5AF51D0828D600CA812B /* SetupSpec.swift */; };
 		621A5AFE1D0866F500CA812B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 621A5AFC1D0866F500CA812B /* Model.xcdatamodeld */; };
+		621A5B081D08B50E00CA812B /* EntitySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621A5B071D08B50E00CA812B /* EntitySpec.swift */; };
+		621A5B0A1D08B56B00CA812B /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621A5B091D08B56B00CA812B /* Beer.swift */; };
+		621A5B0C1D08B62300CA812B /* Cocktail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621A5B0B1D08B62300CA812B /* Cocktail.swift */; };
+		621A5B101D08B96C00CA812B /* CreateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621A5B0F1D08B96C00CA812B /* CreateSpec.swift */; };
+		621A5B161D08C65500CA812B /* FetchSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621A5B151D08C65500CA812B /* FetchSpec.swift */; };
 		8729F7C4F4C1581182301CDB /* Pods_Duvel_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF136FA011B039338D7CBA17 /* Pods_Duvel_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -19,9 +26,16 @@
 		5EDC5DE495B02D59C6F53281 /* Pods-Duvel_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Duvel_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Duvel_Example/Pods-Duvel_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* Duvel_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Duvel_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		621448B31D097398004F72E7 /* DeleteSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteSpec.swift; sourceTree = "<group>"; };
+		621448B81D0995D3004F72E7 /* SaveSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveSpec.swift; sourceTree = "<group>"; };
 		621A5AF21D08287100CA812B /* ContextSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextSpec.swift; sourceTree = "<group>"; };
 		621A5AF51D0828D600CA812B /* SetupSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupSpec.swift; sourceTree = "<group>"; };
 		621A5AFD1D0866F500CA812B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		621A5B071D08B50E00CA812B /* EntitySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntitySpec.swift; sourceTree = "<group>"; };
+		621A5B091D08B56B00CA812B /* Beer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
+		621A5B0B1D08B62300CA812B /* Cocktail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cocktail.swift; sourceTree = "<group>"; };
+		621A5B0F1D08B96C00CA812B /* CreateSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSpec.swift; sourceTree = "<group>"; };
+		621A5B151D08C65500CA812B /* FetchSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchSpec.swift; sourceTree = "<group>"; };
 		7531ADF6AA6B20340296AC06 /* Pods-Duvel_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Duvel_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Duvel_Tests/Pods-Duvel_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		9A0D4B218D8561CD101E525A /* Pods-Duvel_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Duvel_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Duvel_Tests/Pods-Duvel_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		AF136FA011B039338D7CBA17 /* Pods_Duvel_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Duvel_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,10 +89,20 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		621448B71D0995C4004F72E7 /* Managed Object Context */ = {
+			isa = PBXGroup;
+			children = (
+				621448B81D0995D3004F72E7 /* SaveSpec.swift */,
+			);
+			path = "Managed Object Context";
+			sourceTree = "<group>";
+		};
 		621A5AF41D08287400CA812B /* Specs */ = {
 			isa = PBXGroup;
 			children = (
 				621A5B021D086BD500CA812B /* Core */,
+				621A5B061D08B4FD00CA812B /* Managed Object */,
+				621448B71D0995C4004F72E7 /* Managed Object Context */,
 			);
 			path = Specs;
 			sourceTree = "<group>";
@@ -86,6 +110,8 @@
 		621A5AFF1D0866F800CA812B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				621A5B091D08B56B00CA812B /* Beer.swift */,
+				621A5B0B1D08B62300CA812B /* Cocktail.swift */,
 				621A5AFC1D0866F500CA812B /* Model.xcdatamodeld */,
 			);
 			path = Resources;
@@ -98,6 +124,17 @@
 				621A5AF51D0828D600CA812B /* SetupSpec.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		621A5B061D08B4FD00CA812B /* Managed Object */ = {
+			isa = PBXGroup;
+			children = (
+				621A5B0F1D08B96C00CA812B /* CreateSpec.swift */,
+				621448B31D097398004F72E7 /* DeleteSpec.swift */,
+				621A5B071D08B50E00CA812B /* EntitySpec.swift */,
+				621A5B151D08C65500CA812B /* FetchSpec.swift */,
+			);
+			path = "Managed Object";
 			sourceTree = "<group>";
 		};
 		62E28D3CAB4091386D92E604 /* Pods */ = {
@@ -240,8 +277,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				621A5AF31D08287100CA812B /* ContextSpec.swift in Sources */,
+				621A5B101D08B96C00CA812B /* CreateSpec.swift in Sources */,
 				621A5AF61D0828D600CA812B /* SetupSpec.swift in Sources */,
+				621448B41D097398004F72E7 /* DeleteSpec.swift in Sources */,
+				621A5B0A1D08B56B00CA812B /* Beer.swift in Sources */,
+				621448B91D0995D3004F72E7 /* SaveSpec.swift in Sources */,
 				621A5AFE1D0866F500CA812B /* Model.xcdatamodeld in Sources */,
+				621A5B081D08B50E00CA812B /* EntitySpec.swift in Sources */,
+				621A5B0C1D08B62300CA812B /* Cocktail.swift in Sources */,
+				621A5B161D08C65500CA812B /* FetchSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,3 +20,29 @@ extension Duvel {
     }
     
 }
+
+extension NSManagedObjectContext {
+    
+    /// Convert the given `NSManagedObject` to the `NSManagedObjectContext` this method is called upon.
+    ///
+    /// - Parameter object: The `NSManagedObject` instance you want to convert to this context.
+    public func inContext<T: NSManagedObject where T: ManagedObjectType>(object: T) -> T? {
+        if object.objectID.temporaryID {
+            do {
+                try object.managedObjectContext?.obtainPermanentIDsForObjects([object])
+            } catch {
+                return nil
+            }
+        }
+        
+        let objectInContext = try? existingObjectWithID(object.objectID)
+        return objectInContext as? T
+    }
+    
+    internal func childContext() -> NSManagedObjectContext {
+        let childContext = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
+        childContext.parentContext = self
+        return childContext
+    }
+    
+}
