@@ -17,6 +17,7 @@
 		621A5B0C1D08B62300CA812B /* Cocktail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621A5B0B1D08B62300CA812B /* Cocktail.swift */; };
 		621A5B101D08B96C00CA812B /* CreateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621A5B0F1D08B96C00CA812B /* CreateSpec.swift */; };
 		621A5B161D08C65500CA812B /* FetchSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621A5B151D08C65500CA812B /* FetchSpec.swift */; };
+		62F9DF951D0A047000048715 /* QuickSpec+ObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F9DF941D0A047000048715 /* QuickSpec+ObjectModel.swift */; };
 		8729F7C4F4C1581182301CDB /* Pods_Duvel_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF136FA011B039338D7CBA17 /* Pods_Duvel_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		621A5B0B1D08B62300CA812B /* Cocktail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cocktail.swift; sourceTree = "<group>"; };
 		621A5B0F1D08B96C00CA812B /* CreateSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSpec.swift; sourceTree = "<group>"; };
 		621A5B151D08C65500CA812B /* FetchSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchSpec.swift; sourceTree = "<group>"; };
+		62F9DF941D0A047000048715 /* QuickSpec+ObjectModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "QuickSpec+ObjectModel.swift"; sourceTree = "<group>"; };
 		7531ADF6AA6B20340296AC06 /* Pods-Duvel_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Duvel_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Duvel_Tests/Pods-Duvel_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		9A0D4B218D8561CD101E525A /* Pods-Duvel_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Duvel_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Duvel_Tests/Pods-Duvel_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		AF136FA011B039338D7CBA17 /* Pods_Duvel_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Duvel_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +76,7 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				62F9DF931D0A037200048715 /* Helpers */,
 				621A5AFF1D0866F800CA812B /* Resources */,
 				621A5AF41D08287400CA812B /* Specs */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
@@ -146,6 +149,14 @@
 				7531ADF6AA6B20340296AC06 /* Pods-Duvel_Tests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		62F9DF931D0A037200048715 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				62F9DF941D0A047000048715 /* QuickSpec+ObjectModel.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		C6B52A7FE1C5F29B2A113F54 /* Frameworks */ = {
@@ -286,6 +297,7 @@
 				621A5B081D08B50E00CA812B /* EntitySpec.swift in Sources */,
 				621A5B0C1D08B62300CA812B /* Cocktail.swift in Sources */,
 				621A5B161D08C65500CA812B /* FetchSpec.swift in Sources */,
+				62F9DF951D0A047000048715 /* QuickSpec+ObjectModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

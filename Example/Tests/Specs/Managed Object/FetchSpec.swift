@@ -13,13 +13,10 @@ import Duvel
 
 class FetchSpec: QuickSpec {
     override func spec() {
-        // Create the managed object model from the test bundle.
-        let bundle = NSBundle(forClass: FetchSpec.self)
-        let managedObjectModel = NSManagedObjectModel.mergedModelFromBundles([bundle])
         
         describe("managed object") {
             var duvel: Duvel!
-            beforeEach { duvel = try! Duvel(managedObjectModel: managedObjectModel, storeType: NSInMemoryStoreType) }
+            beforeEach { duvel = try! Duvel(managedObjectModel: self.managedObjectModel, storeType: NSInMemoryStoreType) }
             
             context("fetch request") {
                 it("should create a fetch request") {

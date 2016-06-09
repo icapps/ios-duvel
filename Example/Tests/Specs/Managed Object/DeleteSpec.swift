@@ -13,13 +13,10 @@ import Duvel
 
 class DeleteSpec: QuickSpec {
     override func spec() {
-        // Create the managed object model from the test bundle.
-        let bundle = NSBundle(forClass: DeleteSpec.self)
-        let managedObjectModel = NSManagedObjectModel.mergedModelFromBundles([bundle])
         
         describe("managed object") {
             var duvel: Duvel!
-            beforeEach { duvel = try! Duvel(managedObjectModel: managedObjectModel, storeType: NSInMemoryStoreType) }
+            beforeEach { duvel = try! Duvel(managedObjectModel: self.managedObjectModel, storeType: NSInMemoryStoreType) }
             
             context("delete") {
                 it("should not delete any object") {
