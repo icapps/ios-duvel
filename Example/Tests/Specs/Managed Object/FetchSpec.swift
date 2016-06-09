@@ -28,21 +28,21 @@ class FetchSpec: QuickSpec {
             
             context("first") {
                 it("should not find a first object") {
-                    let beer: Beer? = duvel.mainContext.first()
+                    let beer: Beer? = Beer.first(inContext: duvel.mainContext)
                     expect(beer).to(beNil())
                 }
                 
                 it("should find a first object") {
                     let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Duvel" }
                     
-                    let beer: Beer? = duvel.mainContext.first()
+                    let beer: Beer? = Beer.first(inContext: duvel.mainContext)
                     expect(beer).toNot(beNil())
                 }
                 
                 it("should find a first object with attribute") {
                     let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Duvel" }
                     
-                    let beer: Beer? = duvel.mainContext.first(with: "name", and: "Duvel")
+                    let beer: Beer? = Beer.first(inContext: duvel.mainContext, with: "name", and: "Duvel")
                     expect(beer).toNot(beNil())
                     expect(beer?.name).to(equal("Duvel"))
                 }
@@ -52,7 +52,7 @@ class FetchSpec: QuickSpec {
                     let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Stella" }
                     
                     let predicate = NSPredicate(format: "name = %@", "Stella")
-                    let beer: Beer? = duvel.mainContext.first(withPredicate: predicate)
+                    let beer: Beer? = Beer.first(inContext: duvel.mainContext, withPredicate: predicate)
                     expect(beer?.name).to(equal("Stella"))
                 }
                 
@@ -61,14 +61,14 @@ class FetchSpec: QuickSpec {
                     let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Stella" }
                     
                     let descriptor = NSSortDescriptor(key: "name", ascending: false)
-                    let beer: Beer? = duvel.mainContext.first(withSortDescriptors: [descriptor])
+                    let beer: Beer? = Beer.first(inContext: duvel.mainContext, withSortDescriptors: [descriptor])
                     expect(beer?.name).to(equal("Stella"))
                 }
             }
             
             context("all") {
                 it("should not find any object") {
-                    let beers: [Beer] = duvel.mainContext.all()
+                    let beers: [Beer] = Beer.all(inContext: duvel.mainContext)
                     expect(beers.count).to(equal(0))
                 }
                 
@@ -76,7 +76,7 @@ class FetchSpec: QuickSpec {
                     let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Duvel" }
                     let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Stella" }
                     
-                    let beers: [Beer] = duvel.mainContext.all()
+                    let beers: [Beer] = Beer.all(inContext: duvel.mainContext)
                     expect(beers.count).to(equal(2))
                 }
                 
@@ -86,7 +86,7 @@ class FetchSpec: QuickSpec {
                     let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Vedett" }
                     
                     let predicate = NSPredicate(format: "name CONTAINS %@", "l")
-                    let beers: [Beer] = duvel.mainContext.all(withPredicate: predicate)
+                    let beers: [Beer] = Beer.all(inContext: duvel.mainContext, withPredicate: predicate)
                     expect(beers.count).to(equal(2))
                 }
                 
@@ -95,7 +95,7 @@ class FetchSpec: QuickSpec {
                     let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Stella" }
                     
                     let descriptor = NSSortDescriptor(key: "name", ascending: false)
-                    let beers: [Beer] = duvel.mainContext.all(withSortDescriptors: [descriptor])
+                    let beers: [Beer] = Beer.all(inContext: duvel.mainContext, withSortDescriptors: [descriptor])
                     expect(beers.first?.name).to(equal("Stella"))
                     expect(beers.last?.name).to(equal("Duvel"))
                 }
@@ -103,14 +103,14 @@ class FetchSpec: QuickSpec {
             
             context("count") {
                 it("should not count any object") {
-                    expect(duvel.mainContext.count(Beer.self)).to(equal(0))
+                    expect(Beer.count(inContext: duvel.mainContext)).to(equal(0))
                 }
                 
                 it("should find two objects") {
                     let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Duvel" }
                     let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Stella" }
                     
-                    expect(duvel.mainContext.count(Beer.self)).to(equal(2))
+                    expect(Beer.count(inContext: duvel.mainContext)).to(equal(2))
                 }
                 
                 it("should find two objects depending on the predicate") {
@@ -119,7 +119,7 @@ class FetchSpec: QuickSpec {
                     let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Vedett" }
                     
                     let predicate = NSPredicate(format: "name CONTAINS %@", "l")
-                    expect(duvel.mainContext.count(Beer.self, withPredicate: predicate)).to(equal(2))
+                    expect(Beer.count(inContext: duvel.mainContext, withPredicate: predicate)).to(equal(2))
                 }
             }
             

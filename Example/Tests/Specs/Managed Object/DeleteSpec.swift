@@ -24,16 +24,16 @@ class DeleteSpec: QuickSpec {
                     let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Stella" }
                     
                     let predicate = NSPredicate(format: "name = %@", "l")
-                    duvel.mainContext.deleteAll(Beer.self, withPredicate: predicate)
-                    expect(duvel.mainContext.count(Beer.self)).to(equal(2))
+                    Beer.deleteAll(inContext: duvel.mainContext, withPredicate: predicate)
+                    expect(Beer.count(inContext: duvel.mainContext)).to(equal(2))
                 }
                 
                 it("should delete all objects") {
                     let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Duvel" }
                     let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Stella" }
                     
-                    duvel.mainContext.deleteAll(Beer.self)
-                    expect(duvel.mainContext.count(Beer.self)).to(equal(0))
+                    Beer.deleteAll(inContext: duvel.mainContext)
+                    expect(Beer.count(inContext: duvel.mainContext)).to(equal(0))
                 }
                 
                 it("should delete all objects from the predicate") {
@@ -42,8 +42,8 @@ class DeleteSpec: QuickSpec {
                     let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Vedette" }
                     
                     let predicate = NSPredicate(format: "name CONTAINS %@", "l")
-                    duvel.mainContext.deleteAll(Beer.self, withPredicate: predicate)
-                    expect(duvel.mainContext.count(Beer.self)).to(equal(1))
+                    Beer.deleteAll(inContext: duvel.mainContext, withPredicate: predicate)
+                    expect(Beer.count(inContext: duvel.mainContext)).to(equal(1))
                 }
             }
         }

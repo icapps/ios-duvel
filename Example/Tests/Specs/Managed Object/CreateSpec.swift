@@ -20,7 +20,7 @@ class CreateSpec: QuickSpec {
             
             context("create") {
                 it("should create an entity") {
-                    let beer = Beer.create(inContext: duvel.mainContext)
+                    let beer: Beer = Beer.create(inContext: duvel.mainContext)
                     expect(beer.self).to(equal(beer))
                 }
                 
@@ -34,24 +34,24 @@ class CreateSpec: QuickSpec {
             
             context("find or create") {
                 it("should create an entity") {
-                    let beer: Beer? = duvel.mainContext.first(with: "name", and: "Vedett", createIfNeeded: true)
+                    let beer: Beer? = Beer.first(inContext: duvel.mainContext, with: "name", and: "Vedett", createIfNeeded: true)
                     expect(beer?.name).to(equal("Vedett"))
                 }
                 
                 it("should not create a found entity") {
                     let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Vedett" }
-                    let beer: Beer? = duvel.mainContext.first()
+                    let beer: Beer? = Beer.first(inContext: duvel.mainContext)
                     expect(beer?.name).to(equal("Vedett"))
                     
-                    let anotherBeer: Beer? = duvel.mainContext.first(with: "name", and: "Vedett")
+                    let anotherBeer: Beer? = Beer.first(inContext: duvel.mainContext, with: "name", and: "Vedett")
                     expect(beer).to(equal(anotherBeer))
                 }
                 
                 it("should not create an entity that was not found") {
-                    let beer: Beer? = duvel.mainContext.first(with: "name", and: "Vedett")
+                    let beer: Beer? = Beer.first(inContext: duvel.mainContext, with: "name", and: "Vedett")
                     expect(beer).to(beNil())
                     
-                    let beers: [Beer] = duvel.mainContext.all()
+                    let beers: [Beer] = Beer.all(inContext: duvel.mainContext)
                     expect(beers.count).to(equal(0))
                 }
             }

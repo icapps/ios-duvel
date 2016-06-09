@@ -1,5 +1,5 @@
 //
-//  NSManagedObjectContext+Create.swift
+//  ManagedObjectType+Create.swift
 //  Pods
 //
 //  Created by Jelle Vandebeeck on 08/06/16.
@@ -8,7 +8,7 @@
 
 import CoreData
 
-/// Extends some extra create functionality to `ManagedObjectType`.
+/// Extends some extra create functionality to `NSManagedObject`.
 public extension ManagedObjectType {
     
     /// Create a `NSManagedObject` in the given context.
@@ -31,8 +31,8 @@ public extension ManagedObjectType {
         inContext context: NSManagedObjectContext,
         attributes: ((object: Self) -> ())? = nil
     ) -> Self {
-        guard let object = NSEntityDescription.insertNewObjectForEntityForName(Self.entityName, inManagedObjectContext: context) as? Self else {
-            fatalError("Entity \(Self.entityName) does not correspond to \(Self.self)")
+        guard let object = NSEntityDescription.insertNewObjectForEntityForName(entityName, inManagedObjectContext: context) as? Self else {
+            fatalError("Entity \(entityName) does not correspond to \(self)")
         }
         attributes?(object: object)
         return object
