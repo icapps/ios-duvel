@@ -82,12 +82,11 @@ public extension NSManagedObjectContext {
     ///
     /// ```
     /// let predicate: NSPredicate = ...
-    /// let descriptors: [NSSortDescriptor] = ...
-    /// let count = context.count(SomeManagedObject.self, withSortDescriptors: descriptors)
+    /// let count = context.count(SomeManagedObject.self, withPredicate: predicate)
     /// ```
     ///
     /// - Parameter type: The `NSManagedObject`'s type you want to count.
-    /// - Parameter descriptors: The sort descriptors used for sorting the result.
+    /// - Parameter predicate: The predicate used for filtering.
     public func count<T: NSManagedObject where T: ManagedObjectType>(
         type: T.Type,
         withPredicate predicate: NSPredicate? = nil
