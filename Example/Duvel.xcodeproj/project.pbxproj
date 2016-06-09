@@ -104,8 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				621A5B021D086BD500CA812B /* Core */,
-				621A5B061D08B4FD00CA812B /* Managed Object */,
 				621448B71D0995C4004F72E7 /* Managed Object Context */,
+				621A5B061D08B4FD00CA812B /* Managed Object Type */,
 			);
 			path = Specs;
 			sourceTree = "<group>";
@@ -129,7 +129,7 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
-		621A5B061D08B4FD00CA812B /* Managed Object */ = {
+		621A5B061D08B4FD00CA812B /* Managed Object Type */ = {
 			isa = PBXGroup;
 			children = (
 				621A5B0F1D08B96C00CA812B /* CreateSpec.swift */,
@@ -137,7 +137,7 @@
 				621A5B071D08B50E00CA812B /* EntitySpec.swift */,
 				621A5B151D08C65500CA812B /* FetchSpec.swift */,
 			);
-			path = "Managed Object";
+			path = "Managed Object Type";
 			sourceTree = "<group>";
 		};
 		62E28D3CAB4091386D92E604 /* Pods */ = {
