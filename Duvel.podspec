@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Duvel'
-  s.version          = '0.1.0'
+  s.version          = '0.2.0'
   s.summary          = 'Use Core Data in a more friendly way with Swift.'
   s.description      = <<-DESC
 Duvel contains a set of functions and utlities that make it easier for you to use Core Data in Swift.
