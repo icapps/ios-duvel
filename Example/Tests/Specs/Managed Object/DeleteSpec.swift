@@ -14,7 +14,7 @@ import Duvel
 class DeleteSpec: QuickSpec {
     override func spec() {
         // Create the managed object model from the test bundle.
-        let bundle = NSBundle(forClass: FetchSpec.self)
+        let bundle = NSBundle(forClass: DeleteSpec.self)
         let managedObjectModel = NSManagedObjectModel.mergedModelFromBundles([bundle])
         
         describe("managed object") {
