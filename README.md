@@ -8,6 +8,13 @@
 
 > Duvel makes using Core Data more friendlier than ever with Swift.
 
+## TOC
+
+- [Installation](#installation)
+- [Bucket List](#bucket-list)
+- [Author](#author)
+- [License](#license)
+
 ## Installation
 
 Duvel is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your `Podfile`:
@@ -15,11 +22,14 @@ Duvel is available through [CocoaPods](http://cocoapods.org). To install it, sim
 ```ruby
 pod 'Duvel', '~> 0.1'
 ```
-## TOC
 
-- [Installation](#installation)
-- [Author](#author)
-- [License](#license)
+## Bucket List
+
+Here is an overview what is on our todo list.
+
+- [ ] Move some functions to an `NSManagedObject` extension.
+- [ ] Type safety for attribute creation.
+- [ ] Add notifications.
 
 ## Author
 
