@@ -14,6 +14,3 @@ final class Beer: NSManagedObject {
     @NSManaged var name: String
     
 }
-
-extension Beer: ManagedObjectType {
-}

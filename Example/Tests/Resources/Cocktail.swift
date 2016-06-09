@@ -9,15 +9,13 @@
 import CoreData
 import Duvel
 
-final class Cocktail: NSManagedObject {
+class Cocktail: NSManagedObject {
     
     @NSManaged var name: String
     
-}
-
-extension Cocktail: ManagedObjectType {
+    // MARK: - ManagedObjectType
     
-    static var entityName: String {
+    override class var entityName: String {
         return "LongDrink"
     }
     
