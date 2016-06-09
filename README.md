@@ -112,6 +112,10 @@ SomeManagedObject.deleteAll(inContext: context)
 // Delete the objects that match a predicate.
 let predicate: NSPredicate = ...
 SomeManagedObject.deleteAll(inContext: context, withPredicate: predicate)
+
+// Delete one the object.
+let object: SomeManagedObject = ...
+object.delete(inContext: context)
 ```
 
 If you just want to delete a single object, you can use the one defined in Core Data.

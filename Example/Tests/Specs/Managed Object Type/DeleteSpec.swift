@@ -28,6 +28,14 @@ class DeleteSpec: QuickSpec {
                     expect(Beer.count(inContext: duvel.mainContext)).to(equal(2))
                 }
                 
+                it("should delete one object") {
+                    let beer: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Duvel" }
+                    expect(Beer.count(inContext: duvel.mainContext)).to(equal(1))
+                    
+                    beer.delete(inContext: duvel.mainContext)
+                    expect(Beer.count(inContext: duvel.mainContext)).to(equal(0))
+                }
+                
                 it("should delete all objects") {
                     let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Duvel" }
                     let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Stella" }
