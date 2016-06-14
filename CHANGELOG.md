@@ -1,5 +1,9 @@
 # Duvel
 
+## Version 0.3.0
+
+- Add macOS support.
+
 ## Version 0.2.0
 
 - Moved some functionality to the `ManagedObjectType` extension.
