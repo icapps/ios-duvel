@@ -17,8 +17,8 @@ public protocol ManagedObjectType: AnyObject {
 extension NSManagedObject: ManagedObjectType {
     
     /// The entity name that is by default the class name without the module name.
-    public class var entityName: String {
-        return String(self).componentsSeparatedByString(".").last!
+    open class var entityName: String {
+        return String(describing: self).components(separatedBy: ".").last!
     }
     
 }

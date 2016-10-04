@@ -20,7 +20,7 @@ class FetchSpec: QuickSpec {
             
             context("fetch request") {
                 it("should create a fetch request") {
-                    let request = Beer.fetchRequest()
+                    let request = Beer.fetchRequest(withPredicate: nil)
                     expect(request).toNot(beNil())
                     expect(request.entityName).to(equal("Beer"))
                 }

@@ -44,7 +44,7 @@ public extension ManagedObjectType {
         guard let object = self as? NSManagedObject else {
             fatalError("\(self) isn't a NSManagedObject")
         }
-        context.deleteObject(object)
+        context.delete(object)
     }
     
 }

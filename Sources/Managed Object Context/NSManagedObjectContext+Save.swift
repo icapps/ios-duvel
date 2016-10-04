@@ -24,14 +24,14 @@ extension NSManagedObjectContext {
     ///
     /// - Parameter changes: The changes closure returns a local context on which you should apply the changes.
     /// - Parameter completion: The completion closure is called when the saving finished.
-    public func perform(changes changes: (context: NSManagedObjectContext) -> (), completion: (() -> ())? = nil) {
+    public func perform(changes: @escaping (_ context: NSManagedObjectContext) -> (), completion: (() -> ())? = nil) {
         let localContext = createChildContext()
-        localContext.performBlock {
-            changes(context: localContext)
+        localContext.perform {
+            changes(localContext)
             localContext.performSaveIfNeeded()
             
-            let parentContext = localContext.parentContext
-            parentContext?.performBlock {
+            let parentContext = localContext.parent
+            parentContext?.perform {
                 parentContext?.performSaveIfNeeded()
                 
                 completion?()
@@ -39,7 +39,7 @@ extension NSManagedObjectContext {
         }
     }
     
-    private func performSaveIfNeeded() {
+    fileprivate func performSaveIfNeeded() {
         if hasChanges {
             do {
                 try save()

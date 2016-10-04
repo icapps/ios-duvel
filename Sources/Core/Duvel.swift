@@ -9,19 +9,19 @@
 import CoreData
 
 /// `Duvel` is responsible for creating the persistent stores and creating the contexts we want to use.
-public class Duvel {
+open class Duvel {
     
     // MARK: - Private
     
-    private var managedObjectModel: NSManagedObjectModel?
+    fileprivate var managedObjectModel: NSManagedObjectModel?
     
     // MARK: - Context
     
     /// This is the `NSManagedObjectContext` you can use on the main thread. This context is a `MainQueueConcurrencyType`.
-    public let mainContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+    open let mainContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
     
     /// This is the `NSManagedObjectContext` you can use on the background thread. This context is a `PrivateQueueConcurrencyType`.
-    public let backgroundContext = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
+    open let backgroundContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
     
     // MARK: - Init
     
@@ -32,10 +32,10 @@ public class Duvel {
     /// - Parameter managedObjectModel: Pass the optional managed object model just in case it already exists.
     /// - Parameter storeURL: Pass the optional store url just in case it already exists.
     /// - Parameter storeType: Pass the optional store type. The default type is `NSSQLiteStoreType`.
-    public init(managedObjectModel: NSManagedObjectModel? = NSManagedObjectModel.mergedModelFromBundles(nil), storeURL: NSURL = Duvel.defaultStoreURL, storeType: String = NSSQLiteStoreType) throws {
+    public init(managedObjectModel: NSManagedObjectModel? = NSManagedObjectModel.mergedModel(from: nil), storeURL: URL = Duvel.defaultStoreURL, storeType: String = NSSQLiteStoreType) throws {
         // Create the persisten store coordinator.
         persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel!)
-        try persistentStoreCoordinator?.addPersistentStoreWithType(storeType, configuration: nil, URL: storeURL, options: nil)
+        try persistentStoreCoordinator?.addPersistentStore(ofType: storeType, configurationName: nil, at: storeURL, options: nil)
         
         // Assign the coordinator to the contexts.
         mainContext.persistentStoreCoordinator = persistentStoreCoordinator
@@ -54,7 +54,7 @@ public class Duvel {
     /// You can destroy your persisten store and it's linked contexts.
     ///
     /// - Parameter storeURL: Pass the optional store url just in case it is custom defined.
-    public func destroyStore(storeURL: NSURL = Duvel.defaultStoreURL) throws {
+    open func destroyStore(_ storeURL: URL = Duvel.defaultStoreURL) throws {
         // Stop the Core Data notifications.
         stopReceivingContextNotifications()
         
@@ -63,9 +63,9 @@ public class Duvel {
         backgroundContext.reset()
         
         // Remove persistent store.
-        if let store = persistentStoreCoordinator?.persistentStoreForURL(storeURL) {
-            try persistentStoreCoordinator?.removePersistentStore(store)
-            try NSFileManager.defaultManager().removeItemAtURL(storeURL)
+        if let store = persistentStoreCoordinator?.persistentStore(for: storeURL) {
+            try persistentStoreCoordinator?.remove(store)
+            try FileManager.default.removeItem(at: storeURL)
         }
         
         // reset coordinator and model
@@ -76,26 +76,26 @@ public class Duvel {
     // MARK: - Store
     
     /// The `NSPersistentStoreCoordinator` that is set to `Duvel`.
-    public private(set) var persistentStoreCoordinator: NSPersistentStoreCoordinator?
+    open fileprivate(set) var persistentStoreCoordinator: NSPersistentStoreCoordinator?
     
-    private static var bundleIdentifier: String {
-        if let identififer = NSBundle.mainBundle().bundleIdentifier {
+    fileprivate static var bundleIdentifier: String {
+        if let identififer = Bundle.main.bundleIdentifier {
             return identififer
         }
-        return NSBundle(forClass: Duvel.self).bundleIdentifier!
+        return Bundle(for: Duvel.self).bundleIdentifier!
     }
     
-    private static var defaultStoreURL: NSURL {
-        let directoryURL = NSFileManager.defaultManager().URLsForDirectory(defaultSearchPath, inDomains: .UserDomainMask).last!
+    fileprivate static var defaultStoreURL: URL {
+        let directoryURL = FileManager.default.urls(for: defaultSearchPath, in: .userDomainMask).last!
         let storeName = "\(bundleIdentifier).sqlite"
-        return directoryURL.URLByAppendingPathComponent(storeName)
+        return directoryURL.appendingPathComponent(storeName)
     }
     
-    private static var defaultSearchPath: NSSearchPathDirectory {
+    fileprivate static var defaultSearchPath: FileManager.SearchPathDirectory {
         #if os(tvOS)
             return .CachesDirectory
         #else
-            return .DocumentDirectory
+            return .documentDirectory
         #endif
     }
     
@@ -105,21 +105,21 @@ extension Duvel {
     
     // MARK: - Notifications
     
-    private func startReceivingContextNotifications() {
-        let center = NSNotificationCenter.defaultCenter()
+    fileprivate func startReceivingContextNotifications() {
+        let center = NotificationCenter.default
         
         // Context Sync
-        center.addObserver(self, selector: #selector(Duvel.didSaveContext(_:)), name: NSManagedObjectContextDidSaveNotification, object: mainContext)
-        center.addObserver(self, selector: #selector(Duvel.didSaveContext(_:)), name: NSManagedObjectContextDidSaveNotification, object: backgroundContext)
+        center.addObserver(self, selector: #selector(Duvel.didSaveContext(_:)), name: NSNotification.Name.NSManagedObjectContextDidSave, object: mainContext)
+        center.addObserver(self, selector: #selector(Duvel.didSaveContext(_:)), name: NSNotification.Name.NSManagedObjectContextDidSave, object: backgroundContext)
     }
     
-    private func stopReceivingContextNotifications() {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+    fileprivate func stopReceivingContextNotifications() {
+        NotificationCenter.default.removeObserver(self)
     }
     
     // MARK: - Context Sync
     
-    @objc func didSaveContext(notification: NSNotification) {
+    @objc func didSaveContext(_ notification: Notification) {
         if let context = notification.object as? NSManagedObjectContext {
             let contextToRefresh = context == mainContext ? backgroundContext : mainContext
             mergeChangesFromNotification(notification, inContext: contextToRefresh)
@@ -128,9 +128,9 @@ extension Duvel {
     
     // MARK: - Merge changes
     
-    private func mergeChangesFromNotification(notification: NSNotification, inContext context: NSManagedObjectContext) {
-        context.performBlock({ () -> Void in
-            context.mergeChangesFromContextDidSaveNotification(notification)
+    fileprivate func mergeChangesFromNotification(_ notification: Notification, inContext context: NSManagedObjectContext) {
+        context.perform({ () -> Void in
+            context.mergeChanges(fromContextDidSave: notification)
         })
     }
     
