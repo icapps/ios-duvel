@@ -12,7 +12,7 @@ install:
 
 script:
   - set -o pipefail
-  - xcodebuild test -workspace Example/Duvel.xcworkspace -scheme Duvel_Tests -destination "platform=iOS Simulator,name=iPhone 7" -enableCodeCoverage YES | xcpretty
+  - xcodebuild test -workspace Example/Duvel.xcworkspace -scheme Duvel_Tests -destination "platform=iOS Simulator,name=iPhone 7" | xcpretty
 
 deploy:
   skip_cleanup: true
