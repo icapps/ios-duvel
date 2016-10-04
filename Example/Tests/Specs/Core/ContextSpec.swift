@@ -38,7 +38,7 @@ class ContextSpec: QuickSpec {
             
             it("should be able to have a current context on the background thread.") {
                 var useBackgroundContext = false
-                DispatchQueue.global(priority: .background).async {
+                DispatchQueue.global(qos: .background) .async {
                     useBackgroundContext = duvel.currentContext == duvel.backgroundContext
                 }
                 expect(useBackgroundContext).toEventually(beTrue())
