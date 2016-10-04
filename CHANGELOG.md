@@ -1,5 +1,10 @@
 # Duvel
 
+## Version 1.0.0
+
+- Add Swift 3.0 support.
+- Cleanup functions to be more Swifty.
+
 ## Version 0.3.0
 
 - Add macOS support.

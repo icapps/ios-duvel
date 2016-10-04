@@ -27,7 +27,7 @@
 Duvel is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your `Podfile`:
 
 ```ruby
-pod 'Duvel', '~> 0.3'
+pod 'Duvel', '~> 1.0'
 ```
 
 ## Features
