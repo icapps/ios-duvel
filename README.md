@@ -1,4 +1,4 @@
-# Duvel
+![](Resources/Duvel.jpg)
 
 [![CI Status](http://img.shields.io/travis/icapps/ios-duvel.svg?style=flat)](https://travis-ci.org/icapps/ios-duvel)
 [![License](https://img.shields.io/cocoapods/l/Duvel.svg?style=flat)](http://cocoapods.org/pods/Duvel)
