@@ -14,20 +14,20 @@ public extension ManagedObjectType {
     /// Convert the `NSManagedObject` to the given `NSManagedObjectContext`.
     ///
     /// - Parameter context: The `NSManagedObjectContext` instance you want to the object convert to.
-    public func to(context context: NSManagedObjectContext) -> Self? {
+    public func to(context: NSManagedObjectContext) -> Self? {
         guard let object = self as? NSManagedObject else {
             fatalError("\(self) isn't a NSManagedObject")
         }
         
-        if object.objectID.temporaryID {
+        if object.objectID.isTemporaryID {
             do {
-                try object.managedObjectContext?.obtainPermanentIDsForObjects([object])
+                try object.managedObjectContext?.obtainPermanentIDs(for: [object])
             } catch {
                 return nil
             }
         }
         
-        let objectInContext = try? context.existingObjectWithID(object.objectID)
+        let objectInContext = try? context.existingObject(with: object.objectID)
         return objectInContext as? Self
     }
     

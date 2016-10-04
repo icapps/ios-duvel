@@ -15,8 +15,8 @@ public extension ManagedObjectType {
     ///
     /// - Parameter predicate: The `NSPredicate` you want to use to filter the request.
     /// - Parameter descriptors: The array of `NSSortDescriptor` you want to use to sort the request.
-    public static func fetchRequest(withPredicate predicate: NSPredicate? = nil, withSortDescriptors descriptors: [NSSortDescriptor]? = nil) -> NSFetchRequest {
-        let request = NSFetchRequest(entityName: entityName)
+    public static func fetchRequest(withPredicate predicate: NSPredicate?, withSortDescriptors descriptors: [NSSortDescriptor]? = nil) -> NSFetchRequest<NSManagedObject> {
+        let request = NSFetchRequest<NSManagedObject>(entityName: entityName)
         request.predicate = predicate
         request.sortDescriptors = descriptors
         return request
@@ -32,7 +32,7 @@ public extension ManagedObjectType {
     /// - Parameter attribute: The object attribute you want to check.
     /// - Parameter value: The object attribute's value you want to check.
     /// - Parameter createIfNeeded: Create the object with the attribute's value if not found.
-    public static func first(inContext context: NSManagedObjectContext, with attribute: String, and value: AnyObject, createIfNeeded: Bool = false) -> Self? {
+    public static func first(inContext context: NSManagedObjectContext, with attribute: String, and value: Any, createIfNeeded: Bool = false) -> Self? {
         let predicate = NSPredicate(format: "%K = %@", argumentArray: [attribute, value])
         if let object = first(inContext: context, withPredicate: predicate) {
             return object
@@ -47,7 +47,7 @@ public extension ManagedObjectType {
         // Create the object.
         var object: Self? = nil
         if let createdObject = create(inContext: context) as? NSManagedObject {
-            createdObject.setValuesForKeysWithDictionary([attribute: value])
+            createdObject.setValuesForKeys([attribute: value])
             object = createdObject as? Self
         }
 
@@ -99,16 +99,16 @@ public extension ManagedObjectType {
     public static func count(inContext context: NSManagedObjectContext, withPredicate predicate: NSPredicate? = nil) -> Int {
         let request = fetchRequest(withPredicate: predicate)
         request.includesSubentities = false
-        return context.countForFetchRequest(request, error: nil)
+        return (try? context.count(for: request)) ?? 0
     }
     
     // MARK: - Fetch request
     
-    private static func execute(fetchRequest request: NSFetchRequest, inContext context: NSManagedObjectContext) -> [Self] {
+    private static func execute(fetchRequest request: NSFetchRequest<NSManagedObject>, inContext context: NSManagedObjectContext) -> [Self] {
         var fetchedObjects = [Self]()
-        context.performBlockAndWait {
+        context.performAndWait {
             do {
-                if let managedObjects = try context.executeFetchRequest(request) as? [Self] {
+                if let managedObjects = try context.fetch(request as! NSFetchRequest<NSFetchRequestResult>) as? [Self] {
                     fetchedObjects = managedObjects
                 }
             } catch {

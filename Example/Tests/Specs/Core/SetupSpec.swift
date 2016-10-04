@@ -28,10 +28,10 @@ class SetupSpec: QuickSpec {
                 }
                 
                 it("should set a custom store url") {
-                    let directoryURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).last!
-                    let url = directoryURL.URLByAppendingPathComponent("Data.sqlite")
+                    let directoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
+                    let url = directoryURL.appendingPathComponent("Data.sqlite")
                     let duvel = try! Duvel(storeURL: url)
-                    expect(duvel.persistentStoreCoordinator?.persistentStores.first?.URL).to(equal(url))
+                    expect(duvel.persistentStoreCoordinator?.persistentStores.first?.url).to(equal(url))
                 }
                 
                 it("should set a custom store type") {

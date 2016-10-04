@@ -13,8 +13,8 @@ extension QuickSpec {
     
     var managedObjectModel: NSManagedObjectModel {
         // Create the managed object model from the test bundle.
-        let bundle = NSBundle(forClass: CreateSpec.self)
-        return NSManagedObjectModel.mergedModelFromBundles([bundle])!
+        let bundle = Bundle(for: CreateSpec.self)
+        return NSManagedObjectModel.mergedModel(from: [bundle])!
     }
     
 }
