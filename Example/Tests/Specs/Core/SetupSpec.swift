@@ -12,7 +12,7 @@ import CoreData
 import Duvel
 
 extension Duvel {
-    static var sharedInstance: Duvel? = {
+    static var shared: Duvel? = {
         return try? Duvel()
     }()
 }
@@ -50,7 +50,7 @@ class SetupSpec: QuickSpec {
             
             context("singleton") {
                 it("should have a persistent store") {
-                    let duvel = Duvel.sharedInstance
+                    let duvel = Duvel.shared
                     expect(duvel?.persistentStoreCoordinator).toNot(beNil())
                 }
             }

@@ -20,12 +20,12 @@ class CreateSpec: QuickSpec {
             
             context("create") {
                 it("should create an entity") {
-                    let beer: Beer = Beer.create(inContext: duvel.mainContext)
+                    let beer: Beer = Beer.create(in: duvel.mainContext)
                     expect(beer.self).to(equal(beer))
                 }
                 
                 it("should create an entity and set it's properties") {
-                    let beer: Beer = Beer.create(inContext: duvel.mainContext) { beer in
+                    let beer: Beer = Beer.create(in: duvel.mainContext) { beer in
                         beer.name = "Duvel"
                     }
                     expect(beer.name).to(equal("Duvel"))
@@ -34,24 +34,24 @@ class CreateSpec: QuickSpec {
             
             context("find or create") {
                 it("should create an entity") {
-                    let beer: Beer? = Beer.first(inContext: duvel.mainContext, with: "name", and: "Vedett", createIfNeeded: true)
+                    let beer: Beer? = Beer.first(in: duvel.mainContext, with: "name", and: "Vedett", createIfNeeded: true)
                     expect(beer?.name).to(equal("Vedett"))
                 }
                 
                 it("should not create a found entity") {
-                    let _: Beer = Beer.create(inContext: duvel.mainContext) { $0.name = "Vedett" }
-                    let beer: Beer? = Beer.first(inContext: duvel.mainContext)
+                    let _: Beer = Beer.create(in: duvel.mainContext) { $0.name = "Vedett" }
+                    let beer: Beer? = Beer.first(in: duvel.mainContext)
                     expect(beer?.name).to(equal("Vedett"))
                     
-                    let anotherBeer: Beer? = Beer.first(inContext: duvel.mainContext, with: "name", and: "Vedett")
+                    let anotherBeer: Beer? = Beer.first(in: duvel.mainContext, with: "name", and: "Vedett")
                     expect(beer).to(equal(anotherBeer))
                 }
                 
                 it("should not create an entity that was not found") {
-                    let beer: Beer? = Beer.first(inContext: duvel.mainContext, with: "name", and: "Vedett")
+                    let beer: Beer? = Beer.first(in: duvel.mainContext, with: "name", and: "Vedett")
                     expect(beer).to(beNil())
                     
-                    let beers: [Beer] = Beer.all(inContext: duvel.mainContext)
+                    let beers: [Beer] = Beer.all(in: duvel.mainContext)
                     expect(beers.count).to(equal(0))
                 }
             }

@@ -122,13 +122,13 @@ extension Duvel {
     @objc func didSaveContext(_ notification: Notification) {
         if let context = notification.object as? NSManagedObjectContext {
             let contextToRefresh = context == mainContext ? backgroundContext : mainContext
-            mergeChangesFromNotification(notification, inContext: contextToRefresh)
+            mergeChangesFromNotification(notification, in: contextToRefresh)
         }
     }
     
     // MARK: - Merge changes
     
-    fileprivate func mergeChangesFromNotification(_ notification: Notification, inContext context: NSManagedObjectContext) {
+    fileprivate func mergeChangesFromNotification(_ notification: Notification, in context: NSManagedObjectContext) {
         context.perform({ () -> Void in
             context.mergeChanges(fromContextDidSave: notification)
         })

@@ -20,33 +20,33 @@ class SaveSpec: QuickSpec {
             
             context("save") {
                 it("should save an entity on the main context") {
-                    expect(Beer.count(inContext: duvel.mainContext)).to(equal(0))
+                    expect(Beer.count(in: duvel.mainContext)).to(equal(0))
                     
                     var beerCreated = false
                     duvel.mainContext.perform(changes: { context in
-                        let _ = Beer.create(inContext: context)
-                        expect(Beer.count(inContext: duvel.mainContext)).to(equal(0))
+                        let _ = Beer.create(in: context)
+                        expect(Beer.count(in: duvel.mainContext)).to(equal(0))
                     }, completion: {
                         beerCreated = true
-                        expect(Beer.count(inContext: duvel.mainContext)).to(equal(1))
+                        expect(Beer.count(in: duvel.mainContext)).to(equal(1))
                     })
                     
                     expect(beerCreated).toEventually(beTrue())
                 }
                 
                 it("should save an entity on the background context") {
-                    expect(Beer.count(inContext: duvel.backgroundContext)).to(equal(0))
-                    expect(Beer.count(inContext: duvel.mainContext)).to(equal(0))
+                    expect(Beer.count(in: duvel.backgroundContext)).to(equal(0))
+                    expect(Beer.count(in: duvel.mainContext)).to(equal(0))
                     
                     var beerCreated = false
                     duvel.backgroundContext.perform(changes: { context in
-                        let _ = Beer.create(inContext: context)
-                        expect(Beer.count(inContext: duvel.backgroundContext)).to(equal(0))
-                        expect(Beer.count(inContext: duvel.mainContext)).to(equal(0))
+                        let _ = Beer.create(in: context)
+                        expect(Beer.count(in: duvel.backgroundContext)).to(equal(0))
+                        expect(Beer.count(in: duvel.mainContext)).to(equal(0))
                     }, completion: {
                         beerCreated = true
-                        expect(Beer.count(inContext: duvel.backgroundContext)).to(equal(1))
-                        expect(Beer.count(inContext: duvel.mainContext)).to(equal(1))
+                        expect(Beer.count(in: duvel.backgroundContext)).to(equal(1))
+                        expect(Beer.count(in: duvel.mainContext)).to(equal(1))
                     })
                     
                     expect(beerCreated).toEventually(beTrue())

@@ -14,20 +14,20 @@ public extension ManagedObjectType {
     /// Create a `NSManagedObject` in the given context.
     /// 
     /// ```
-    /// let object = SomeManagedObject.create(inContext: context)
+    /// let object = SomeManagedObject.create(in: context)
     /// ```
     ///
     /// You are able to immediatly update the properties if you apply them on the given object returned by the attributes callback.
     ///
     /// ```
-    /// let object = SomeManagedObject.create(inContext: context) { innerObject in
+    /// let object = SomeManagedObject.create(in: context) { innerObject in
     ///     innerObject.name = "Some name"
     /// }
     /// ```
     ///
     /// - Parameter context: This is the context in which you want to create the object.
     /// - Parameter attributes: This is a callback with the created object on which you want to change some properties.
-    public static func create(inContext context: NSManagedObjectContext, attributes: ((_ object: Self) -> ())? = nil) -> Self {
+    public static func create(in context: NSManagedObjectContext, attributes: ((_ object: Self) -> ())? = nil) -> Self {
         guard let object = NSEntityDescription.insertNewObject(forEntityName: entityName, into: context) as? Self else {
             fatalError("Entity \(entityName) does not correspond to \(self)")
         }

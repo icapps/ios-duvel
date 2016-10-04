@@ -85,14 +85,14 @@ You can create a `NSManagedObject` in a context. The `NSManagedObject` you want 
 
 ```swift
 let context: NSManagedObjectContext = ...
-let object = SomeManagedObject.create(inContext: context)
+let object = SomeManagedObject.create(in: context)
 ```
 
 We can also immediately set the properties during the creation process.
 
 ```swift
 let context: NSManagedObjectContext = ...
-let object = SomeManagedObject.create(inContext: context) { innerObject in
+let object = SomeManagedObject.create(in: context) { innerObject in
   innerObject.name = "Leroy"
 }
 ```
@@ -107,11 +107,11 @@ There is a possibility to delete all the `NSManagedObject`'s depending on the gi
 let context: NSManagedObjectContext = ...
 
 // Delete all the objects.
-SomeManagedObject.deleteAll(inContext: context)
+SomeManagedObject.deleteAll(in: context)
 
 // Delete the objects that match a predicate.
 let predicate: NSPredicate = ...
-SomeManagedObject.deleteAll(inContext: context, withPredicate: predicate)
+SomeManagedObject.deleteAll(in: context, with: predicate)
 
 // Delete one the object.
 let object: SomeManagedObject = ...
@@ -122,7 +122,7 @@ If you just want to delete a single object, you can use the one defined in Core 
 
 ```swift
 let context: NSManagedObjectContext = ...
-SomeManagedObject.deleteObject(inContext: context)
+SomeManagedObject.deleteObject(in: context)
 ```
 
 **BE AWARE!** Nothing is persisted to the store until you save.
@@ -135,8 +135,8 @@ When no object was found for this value, you can create a new one with the attri
 
 ```swift
 let context: NSManagedObjectContext = ...
-let object = SomeManagedObject.first(inContext: context, with: "name", value: "Leroy")
-let object = SomeManagedObject.first(inContext: context, with: "name", value: "Leroy", createIfNeeded: true)
+let object = SomeManagedObject.first(in: context, with: "name", value: "Leroy")
+let object = SomeManagedObject.first(in: context, with: "name", value: "Leroy", createIfNeeded: true)
 ```
 
 You can also look for the first `NSManagedObject` found for the given predicate. You can also indicate the sort order of the fetched results so that you can eventually fetch the last object.
@@ -145,7 +145,7 @@ You can also look for the first `NSManagedObject` found for the given predicate.
 let predicate: NSPredicate = ...
 let descriptors: [NSSortDescriptor] = ...
 let context: NSManagedObjectContext = ...
-let object = SomeManagedObject.first(inContext: context, withPredicate: predicate, withSortDescriptors: descriptors)
+let object = SomeManagedObject.first(in: context, with: predicate, sort: descriptors)
 ```
 
 Fetch all the objects for a certain type. You can specify a filter by giving an `NSPredicate` and a sort order by providing a list of `NSSortDescriptor`'s.
@@ -154,7 +154,7 @@ Fetch all the objects for a certain type. You can specify a filter by giving an 
 let predicate: NSPredicate = ...
 let descriptors: [NSSortDescriptor] = ...
 let context: NSManagedObjectContext = ...
-let objects = SomeManagedObject.all(inContext: context, withPredicate: predicate, withSortDescriptors: descriptors)
+let objects = SomeManagedObject.all(in: context, with: predicate, sort: descriptors)
 ```
 
 Count the number of object. You can specify a filter by giving an `NSPredicate`.
@@ -162,7 +162,7 @@ Count the number of object. You can specify a filter by giving an `NSPredicate`.
 ```swift
 let predicate: NSPredicate = ...
 let context: NSManagedObjectContext = ...
-let count = SomeManagedObject.count(inContext: context, withPredicate: predicate)
+let count = SomeManagedObject.count(in: context, with: predicate)
 ```
 
 ### Saving
