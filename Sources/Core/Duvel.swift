@@ -93,7 +93,7 @@ open class Duvel {
     
     fileprivate static var defaultSearchPath: FileManager.SearchPathDirectory {
         #if os(tvOS)
-            return .CachesDirectory
+            return .cachesDirectory
         #else
             return .documentDirectory
         #endif
