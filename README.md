@@ -48,18 +48,18 @@ let managedObjectModel = NSManagedObjectModel.mergedModelFromBundles(nil)
 let duvel = try! Duvel(managedObjectModel: managedObjectModel)
 ```
 
-Is you want to instantiate `Duvel` as a `sharedInstance` that you want to use throughout your application without passing the instance between the different classes. Than extend `Duvel` like this.
+Is you want to instantiate `Duvel` with a static `shared` function that you want to use throughout your application without passing the instance between the different classes. Than extend `Duvel` like this.
 
 ```swift
 extension Duvel {
-    static var sharedInstance: Duvel? = {
+    static var shared: Duvel? = {
         // Add more configuration to the instance as shown in the above code.
         return try? Duvel()
     }()
 }
 
 // This will encapsulate `Duvel` in an singleton instance.
-Duvel.sharedInstance
+Duvel.shared
 ```
 
 ### Context
@@ -68,13 +68,13 @@ There are three ways to access some contexts.
 
 ```swift
 // Get the main `NSManagedObjectContext`.
-Duvel.sharedInstance.mainContext
+Duvel.shared.mainContext
 
 // Get the background `NSManagedObjectContext`.
-Duvel.sharedInstance.backgroundContext
+Duvel.shared.backgroundContext
 
 // Get the `NSManagedObjectContext` for the current thread.
-Duvel.sharedInstance.currentContext
+Duvel.shared.currentContext
 ```
 
 Changes made on the `backgroundContext` are automatically merged to the `mainContext` when succeeded.
